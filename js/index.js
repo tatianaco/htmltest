@@ -34,20 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 
-        //window.open = cordova.InAppBrowser.open;
-        //https://test-mymellanox.cs2.force.com/support
-        var ref = window.open('http://tatianaco.github.io/htmltest/', '_blank', 'location=yes');
-        //var ref = window.open('http://tatianaco.github.io/htmltest/', '_blank', 'location=yes');
-                 ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url);
-                                                                        if (event.url == "https://academy.mellanox.com/"){
-                                                                            //navigator.app.loadUrl('https://academy.mellanox.com', {openExternal : true});
-                                                                            cordova.InAppBrowser.open("https://academy.mellanox.com/", '_system', 'location = yes')
-                                                                        }
 
-                                                                    });
-                 ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
-                 ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
-                 ref.addEventListener('exit', function(event) { alert(event.type); });
 
         console.log("in app.deviceReady function");
         app.receivedEvent('deviceready');
