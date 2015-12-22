@@ -19,9 +19,7 @@
 var app = {
     // Application Constructor
     initialize: function() {
-    	var console = {};
-		console.log = function(){};
-		window.console = console;
+        console.log("in initialize function");
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -36,8 +34,24 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        console.log("in app.deviceReady function");
+        console.log("in onDeviceReady");
         app.receivedEvent('deviceready');
+
+        console.log('about to scan');
+                try {
+                    var scanned = app.scan();
+                    console.log('scan triggered', scanned);
+                } catch (e) {
+                    console.log('scan failed');
+                    console.log(JSON.stringify(e));
+                    console.log('that sucks... reloading in 10');
+                    setTimeout(function() {
+                        console.log('reloading now...');
+                        app.onDeviceReady();
+                    }, 10000);
+                }
+
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -49,5 +63,26 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    }
+    },
+    scan: function() {
+            console.log('scan(): init');
+            // documentation said the syntax was this:
+            // var scanner = window.PhoneGap.require("cordova/plugin/BarcodeScanner");
+            // but playing with options, seems like it should be this:
+            var scanner = cordova.plugins.barcodeScanner; //window.cordova.require("cordova/plugin/BarcodeScanner");
+            scanner.scan(
+                    function (result) {
+                        alert("We got a barcode\n" +
+                            "Result: " + result.text + "\n" +
+                            "Format: " + result.format + "\n" +
+                            "Cancelled: " + result.cancelled);
+                    },
+                    function (error) {
+                        alert("Scanning failed: " + error);
+                    }
+             );
+        }
 };
+
+app.initialize();
+
