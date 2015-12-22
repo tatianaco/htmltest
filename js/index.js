@@ -70,6 +70,8 @@ var app = {
              );
         }
 };
+console.log("WEB - read index.js");
+app.initialize();
 
 
 
