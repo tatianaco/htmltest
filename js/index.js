@@ -37,20 +37,7 @@ var app = {
         console.log("in onDeviceReady");
         app.receivedEvent('deviceready');
 
-        console.log('about to scan');
-                try {
-                    var scanned = app.scan();
-                    console.log('scan triggered', scanned);
-                } catch (e) {
-                    console.log('scan failed');
-                    console.log(JSON.stringify(e));
-                    console.log('that sucks... reloading in 10');
-                    setTimeout(function() {
-                        console.log('reloading now...');
-                        app.onDeviceReady();
-                    }, 10000);
-                }
-
+       
 
     },
     // Update DOM on a Received Event

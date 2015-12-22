@@ -10,14 +10,38 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/demo.css" rel="stylesheet">
 	
-	<script src="/js/lib/cordova/cordova.js"></script>
-	<script src="/js/lib/cordova/cordova_plugins.js"></script>
+	<script src="/js/cordova.js"></script>
+	<script src="/js/cordova_plugins.js"></script>
 	
-	<script src="/js/lib/cordova/inappbrowser.js"></script>
-	<script src="/js/lib/cordova/barcodescanner.js"></script>
+	<script src="/js/inappbrowser.js"></script>
+	<script src="/js/barcodescanner.js"></script>
 	
 
 	<script src="/js/cordova.js"></script>
+	
+	
+	<script>
+	document.addEventListener("DOMContentLoaded", function(event) { 
+    	console.log("WEB - DomContentLoaded");
+	});
+	
+	function applyScan() {
+	 console.log('about to scan');
+                try {
+                    var scanned = app.scan();
+                    console.log('scan triggered', scanned);
+                } catch (e) {
+                    console.log('scan failed');
+                    console.log(JSON.stringify(e));
+                    console.log('that sucks... reloading in 10');
+                    setTimeout(function() {
+                        console.log('reloading now...');
+                        app.onDeviceReady();
+                    }, 10000);
+                }
+	 }
+
+	</script>
     <!-- Add IntroJs styles -->
     <link href="introjs.css?v=060" rel="stylesheet">
 
@@ -61,7 +85,7 @@
         
         
         <a href="javascript:;" onclick="app.scan();" >               
-                                 Mellanox <b>Scan1</b></a>   
+                                 Mellanox <b>Scan3</b></a>   
   
         <BR><BR><BR>
         

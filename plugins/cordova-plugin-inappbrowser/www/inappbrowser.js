@@ -41,7 +41,6 @@ function InAppBrowser() {
 
 InAppBrowser.prototype = {
     _eventHandler: function (event) {
-        console.log("event.type  = " + event.type );
         if (event && (event.type in this.channels)) {
             this.channels[event.type].fire(event);
         }
@@ -104,7 +103,7 @@ module.exports = function(strUrl, strWindowName, strWindowFeatures, callbacks) {
     };
 
     strWindowFeatures = strWindowFeatures || "";
-    console.log("strUrl in moduleExport = " + strUrl);
+
     exec(cb, cb, "InAppBrowser", "open", [strUrl, strWindowName, strWindowFeatures]);
     return iab;
 };
