@@ -56,7 +56,7 @@ var app = {
             console.log('scanning');
         
         	try {
-        		var scanner = cordova.require('cordova/plugin/BarcodeScanner');
+        		var scanner = window.cordova.require('phonegap-plugin-barcodescanner.BarcodeScanner');
         	} catch(e) {
         		console.log("not working");
         	}
