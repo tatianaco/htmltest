@@ -59,8 +59,11 @@ var app = {
             //var scanner = cordova.plugins.barcodeScanner; //window.cordova.require("cordova/plugin/BarcodeScanner");
             //var scannerModule = require("./barcodescanner.js");
             //var scanner = new scannerModule();
-            var scanner = window.cordova.require("phonegap-plugin-barcodescanner.BarcodeScanner");
+            var scannerModule = window.cordova.require("phonegap-plugin-barcodescanner.BarcodeScanner");
             
+            console.log("scan module defined")
+            var scanner = scannerModule();
+            console.log("scanner created");
             scanner.scan(
                     function (result) {
                         alert("We got a barcode\n" +
