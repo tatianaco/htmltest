@@ -71,6 +71,7 @@ function BarcodeScanner() {
  */
 BarcodeScanner.prototype.scan = function (successCallback, errorCallback, config) {
 
+	console.log("MODULE - started scan");
     if(config instanceof Array) {
         // do nothing
     } else {
