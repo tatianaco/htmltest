@@ -57,7 +57,7 @@ var app = {
             // var scanner = window.PhoneGap.require("cordova/plugin/BarcodeScanner");
             // but playing with options, seems like it should be this:
             //var scanner = require( // cordova.plugins.barcodeScanner; //window.cordova.require("cordova/plugin/BarcodeScanner");
-            var scannerModule = require("js/barcodescanner.js");
+            var scannerModule = require("./barcodescanner.js");
             var scanner = new scannerModule();
             scanner.scan(
                     function (result) {
