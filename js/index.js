@@ -53,13 +53,18 @@ var app = {
     },
     scan: function() {
             console.log('scan(): init');
-            // documentation said the syntax was this:
-            // var scanner = window.PhoneGap.require("cordova/plugin/BarcodeScanner");
-            // but playing with options, seems like it should be this:
-            //var scanner = cordova.plugins.barcodeScanner; //window.cordova.require("cordova/plugin/BarcodeScanner");
-            //var scannerModule = require("./barcodescanner.js");
-            //var scanner = new scannerModule();
-            var scanner = window.cordova.require("phonegap-plugin-barcodescanner.BarcodeScanner");
+            console.log('scanning');
+        
+        	try {
+        		var scanner = cordova.require('cordova/plugin/BarcodeScanner');
+        	} catch(e) {
+        		console.log("not working");
+        	}
+
+        	console.log("scanner is defined?");
+
+        	console.log("scanner: " + scanner);
+
             
             console.log("scan module defined")
            
