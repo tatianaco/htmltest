@@ -40,7 +40,7 @@
 	*/
 	
 	function init() {
-	console.log("in init")
+		console.log("in init")
         if(isAndroid()){
         console.log("android")
             $("script").attr("src", "js/cordova_ios.js").appendTo("head");
@@ -61,10 +61,11 @@
 
 	
 	
-	init();
+
 	
 	document.addEventListener("DOMContentLoaded", function(event) { 
     	console.log("WEB - DomContentLoaded");
+    	init();
     	
 	});
 	
@@ -130,7 +131,7 @@
         
         
         <a href="javascript:;" onclick="app.scan();" >               
-                                 Mellanox <b>Scan28</b></a>   
+                                 Mellanox <b>Scan29</b></a>   
   
         <BR><BR><BR>
         
