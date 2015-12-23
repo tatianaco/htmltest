@@ -88,11 +88,11 @@ var app = {
 	 		
 	 		//console.log("deviceUiid  = " + device.uuid);
 	 		//console.log("deviceSerial = " + device.serial);
-	 		//var string = device.uuid;
-	 		var string = device.serial;
+	 		var string = device.uuid;
+	 		//var string = device.serial;
 
 	 		console.log("devicePlatform  = " + string);
-	 		var url = "https://ds503.awmdm.co.uk/devicemanagement/AppCatalog?uid="+string+"&type=2#"
+	 		var url = "https://ds503.awmdm.co.uk/devicemanagement/AppCatalog?uid="+string+"&type=5#"
 	 		alert("url = " + url);
 	 		//window.open(url, '_system');
 	 		if (string != null && string != "null" && string != "") {
