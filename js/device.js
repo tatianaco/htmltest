@@ -47,7 +47,7 @@ function Device() {
 
     var me = this;
 	console.log("WEB - Device vars setted to null");
-    channel.onCordovaReady.subscribe(function() {
+    //channel.onCordovaReady.subscribe(function() {
     	console.log("WEB - Device onCordovaSubscribe");
         me.getInfo(function(info) {
             //ignoring info.cordova returning from native, we should use value from cordova.version defined in cordova.js
@@ -67,7 +67,7 @@ function Device() {
             me.available = false;
             utils.alert("[ERROR] Error initializing Cordova: " + e);
         });
-    });
+    //});
 }
 
 /**
@@ -77,6 +77,7 @@ function Device() {
  * @param {Function} errorCallback The function to call when there is an error getting the heading data. (OPTIONAL)
  */
 Device.prototype.getInfo = function(successCallback, errorCallback) {
+	console.log("WEB - Device in getInfo");
     argscheck.checkArgs('fF', 'Device.getInfo', arguments);
     exec(successCallback, errorCallback, "Device", "getDeviceInfo", []);
 };
