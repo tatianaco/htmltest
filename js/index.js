@@ -85,7 +85,7 @@ var app = {
         	var device = window.cordova.require('cordova-plugin-device.device');
 	 		var string = device.uiid;
 	 		
-	 		console.log("deviceUiid  = " + uiid);
+	 		console.log("deviceUiid  = " + string);
         }
 };
 console.log("WEB - read index.js");
