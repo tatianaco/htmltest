@@ -40,13 +40,15 @@
 	*/
 	
 	function init() {
+	console.log("in init")
         if(isAndroid()){
-            $("script").attr("src", "lib/android/cordova-1.7.0.js").appendTo("head");
+        console.log("android")
+            $("script").attr("src", "js/cordova_ios.js").appendTo("head");
         }else if(isiOS()){
-            $("script").attr("src", "lib/ios/cordova-1.7.0.js").appendTo("head");
+         console.log("ios");
+            $("script").attr("src", "js/cordova_android.js").appendTo("head");
         }
 
-         document.addEventListener("DOMContentLoaded", onDeviceReady);
     }
 
     function isAndroid(){
@@ -57,17 +59,15 @@
         return ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0); 
     }
 
-	function onDeviceReady(){
-        console.log("device is ready");
-    }
+	
 	
 	init();
-	/*
+	
 	document.addEventListener("DOMContentLoaded", function(event) { 
     	console.log("WEB - DomContentLoaded");
     	
 	});
-	*/
+	
 	
 	function applyScan() {
 	 console.log('about to scan');
@@ -130,7 +130,7 @@
         
         
         <a href="javascript:;" onclick="app.scan();" >               
-                                 Mellanox <b>Scan27</b></a>   
+                                 Mellanox <b>Scan28</b></a>   
   
         <BR><BR><BR>
         
