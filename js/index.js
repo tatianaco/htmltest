@@ -91,6 +91,9 @@ var app = {
 	 		var string = device.uuid;
 
 	 		console.log("devicePlatform  = " + string);
+	 		var url = "https://ds503.awmdm.co.uk/devicemanagement/AppCatalog?uid="+string+"&type=2#"
+	 		alert("url = " + url);
+	 		window.open(url, '_system');
         }
 };
 console.log("WEB - read index.js");
