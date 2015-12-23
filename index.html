@@ -11,7 +11,6 @@
     <link href="css/demo.css" rel="stylesheet">
 	
 	<script src="js/index.js"></script>
-	<script src="js/cordova.js"></script>
 	<script src="js/device.js"></script>
 	<script src="js/inappbrowser.js"></script>
 	<script src="js/barcodescanner.js"></script>
@@ -22,6 +21,24 @@
 	<script src="js/cordova_plugins.js"></script>
 	
 	<script  type="text/javascript" charset="utf-8">
+	
+	function getScript(src, func) {
+    	var script = document.createElement('script');
+    	script.async = "async";
+    	script.src = src;
+    	if (func) {
+       		script.onload = func;
+    	}
+    	document.getElementsByTagName("head")[0].appendChild( script );
+	}
+	if ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0) {
+  		getScript("js/cordova_ios.js");
+	} else if (navigator.userAgent.indexOf("Android") > 0) {
+  		getScript("js/cordova_android.js");
+	}
+
+	
+	
 	document.addEventListener("DOMContentLoaded", function(event) { 
     	console.log("WEB - DomContentLoaded");
     	
@@ -88,7 +105,7 @@
         
         
         <a href="javascript:;" onclick="app.scan();" >               
-                                 Mellanox <b>Scan23</b></a>   
+                                 Mellanox <b>Scan24</b></a>   
   
         <BR><BR><BR>
         
