@@ -41,6 +41,13 @@
                     }, 10000);
                 }
 	 }
+	 
+	 function getDeviceUIID () {
+	 	console.log("in getDeviceUIID func");
+	 	var string = device.uuid;
+	 	console.log("deviceUIID  = " + device.uuid;
+	 
+	 }
 
 	</script>
     <!-- Add IntroJs styles -->
@@ -87,6 +94,11 @@
         
         <a href="javascript:;" onclick="app.scan();" >               
                                  Mellanox <b>Scan22</b></a>   
+  
+        <BR><BR><BR>
+        
+         <a href="javascript:;" onclick="getDeviceUIID();" >               
+                                 Mellanox <b>Awmdm1</b></a>   
   
         <BR><BR><BR>
         
