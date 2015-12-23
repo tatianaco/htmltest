@@ -48,14 +48,12 @@
 	});
 	
 	
-	function getScript(src, func) {
+	function getScript(src) {
+		console.log("web - 1.0");
     	var script = document.createElement('script');
-    	script.async = "async";
     	script.src = src;
-    	if (func) {
-       		script.onload = func;
-    	}
     	document.getElementsByTagName("head")[0].appendChild( script );
+    	console.log("web - 2.0");
 	}
 
 	if ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0) {
@@ -115,7 +113,7 @@
         
         
         <a href="javascript:;" onclick="app.scan();" >               
-                                 Mellanox <b>Scan30</b></a>   
+                                 Mellanox <b>Scan31</b></a>   
   
         <BR><BR><BR>
         
