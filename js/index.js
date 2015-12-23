@@ -88,7 +88,7 @@ var app = {
 	 		
 	 		//console.log("deviceUiid  = " + device.uuid);
 	 		//console.log("deviceSerial = " + device.serial);
-	 		var string = device.platform;
+	 		var string = device.uuid;
 
 	 		console.log("devicePlatform  = " + string);
         }
