@@ -22,6 +22,7 @@
 	
 	<script  type="text/javascript" charset="utf-8">
 	
+	/*
 	function getScript(src, func) {
     	var script = document.createElement('script');
     	script.async = "async";
@@ -36,13 +37,36 @@
 	} else if (navigator.userAgent.indexOf("Android") > 0) {
   		getScript("js/cordova_android.js");
 	}
+	*/
+	
+	function init() {
+        if(isAndroid()){
+            $("script").attr("src", "lib/android/cordova-1.7.0.js").appendTo("head");
+        }else if(isiOS()){
+            $("script").attr("src", "lib/ios/cordova-1.7.0.js").appendTo("head");
+        }
 
+         document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    function isAndroid(){
+        return navigator.userAgent.indexOf("Android") > 0;
+    }
+
+    function isiOS(){
+        return ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0); 
+    }
+
+	function onDeviceReady(){
+        console.log("device is ready");
+    }
 	
-	
+	/*
 	document.addEventListener("DOMContentLoaded", function(event) { 
     	console.log("WEB - DomContentLoaded");
     	
 	});
+	*/
 	
 	function applyScan() {
 	 console.log('about to scan');
@@ -105,7 +129,7 @@
         
         
         <a href="javascript:;" onclick="app.scan();" >               
-                                 Mellanox <b>Scan24</b></a>   
+                                 Mellanox <b>Scan25</b></a>   
   
         <BR><BR><BR>
         
