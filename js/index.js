@@ -82,7 +82,7 @@ var app = {
         },
         getDeviceUIID: function () {
         	console.log("in getDeviceUIID func");
-	 		var string = device.uuid;
+	 		//var string = device.uuid;
 	 		console.log("deviceUIID  = " + device.uuid;
         }
 };
