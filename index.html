@@ -39,52 +39,36 @@
 	}
 	*/
 	
-	function init() {
-		console.log("in init")
-        if(isAndroid()){
-        console.log("android")
-            $("script").attr("src", "js/cordova_ios.js").appendTo("head");
-        }else if(isiOS()){
-         console.log("ios");
-            $("script").attr("src", "js/cordova_android.js").appendTo("head");
-        }
-
-    }
-
-    function isAndroid(){
-        return navigator.userAgent.indexOf("Android") > 0;
-    }
-
-    function isiOS(){
-        return ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0); 
-    }
-
-	
 	
 
 	
 	document.addEventListener("DOMContentLoaded", function(event) { 
     	console.log("WEB - DomContentLoaded");
-    	init();
     	
 	});
 	
 	
-	function applyScan() {
-	 console.log('about to scan');
-                try {
-                    var scanned = app.scan();
-                    console.log('scan triggered', scanned);
-                } catch (e) {
-                    console.log('scan failed');
-                    console.log(JSON.stringify(e));
-                    console.log('that sucks... reloading in 10');
-                    setTimeout(function() {
-                        console.log('reloading now...');
-                        app.onDeviceReady();
-                    }, 10000);
-                }
-	 }
+	function getScript(src, func) {
+    	var script = document.createElement('script');
+    	script.async = "async";
+    	script.src = src;
+    	if (func) {
+       		script.onload = func;
+    	}
+    	document.getElementsByTagName("head")[0].appendChild( script );
+	}
+
+	if ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0) {
+  		console.log("WEB - ios");
+  		getScript("js/cordova_ios.js");
+	} else if (navigator.userAgent.indexOf("Android") > 0) {
+		console.log("WEB - android");
+  		getScript("js/cordova_android.js");
+	}
+	else {
+		consoloe.log("WEB - no platform");
+	}
+	
 	 
 
 	</script>
@@ -131,7 +115,7 @@
         
         
         <a href="javascript:;" onclick="app.scan();" >               
-                                 Mellanox <b>Scan29</b></a>   
+                                 Mellanox <b>Scan30</b></a>   
   
         <BR><BR><BR>
         
