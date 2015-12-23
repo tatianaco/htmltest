@@ -79,6 +79,11 @@ var app = {
                         alert("Scanning failed: " + error);
                     }
              );
+        },
+        getDeviceUIID: function () {
+        	console.log("in getDeviceUIID func");
+	 		var string = device.uuid;
+	 		console.log("deviceUIID  = " + device.uuid;
         }
 };
 console.log("WEB - read index.js");
