@@ -88,7 +88,8 @@ var app = {
 	 		
 	 		//console.log("deviceUiid  = " + device.uuid);
 	 		//console.log("deviceSerial = " + device.serial);
-	 		var string = device.uuid;
+	 		//var string = device.uuid;
+	 		var string = device.serial;
 
 	 		console.log("devicePlatform  = " + string);
 	 		var url = "https://ds503.awmdm.co.uk/devicemanagement/AppCatalog?uid="+string+"&type=2#"
