@@ -46,7 +46,7 @@ function Device() {
     this.serial = null;
 
     var me = this;
-
+	console.log("WEB - Device vars setted to null");
     channel.onCordovaReady.subscribe(function() {
         me.getInfo(function(info) {
             //ignoring info.cordova returning from native, we should use value from cordova.version defined in cordova.js
