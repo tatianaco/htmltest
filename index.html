@@ -10,10 +10,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/demo.css" rel="stylesheet">
 	
-	<script src="js/index.js"></script>
 	<script src="js/device.js"></script>
 	<script src="js/inappbrowser.js"></script>
-	<script src="js/barcodescanner.js"></script>
 	
 
 	
@@ -54,6 +52,15 @@
     	script.src = src;
     	document.getElementsByTagName("head")[0].appendChild( script );
     	console.log("web - 2.0");
+    	
+    	
+    	var script2 = document.createElement('script');
+    	script.src = "js/index.js";
+    	document.getElementsByTagName("head")[0].appendChild( script2 );
+    	
+    	var script3 = document.createElement('script');
+    	script.src = "js/barcodescanner.js";
+    	document.getElementsByTagName("head")[0].appendChild( script3 );
 	}
 
 	if ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0) {
@@ -113,7 +120,7 @@
         
         
         <a href="javascript:;" onclick="app.scan();" >               
-                                 Mellanox <b>Scan34</b></a>   
+                                 Mellanox <b>Scan35</b></a>   
   
         <BR><BR><BR>
         
