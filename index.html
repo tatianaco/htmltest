@@ -10,15 +10,12 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/demo.css" rel="stylesheet">
 	
-	<script src="js/index.js"></script>
-	<script src="js/device.js"></script>
-	<script src="js/inappbrowser.js"></script>
-	<script src="js/barcodescanner.js"></script>
 	
+	
+	<script src="js/index.js"></script>
 
 	
 	
-	<script src="js/cordova_plugins.js"></script>
 	
 	<script  type="text/javascript" charset="utf-8">
 	
@@ -68,6 +65,11 @@
 		consoloe.log("WEB - no platform");
 	}
 	
+	getScript("js/device.js");
+	getScript("js/inappbrowser.js");
+	getScript("js/barcodescanner.js");
+	getScript("js/cordova_plugins.js");
+
 	 
 
 	</script>
@@ -114,7 +116,7 @@
         
         
         <a href="javascript:;" onclick="app.scan();" >               
-                                 Mellanox <b>Scan36</b></a>   
+                                 Mellanox <b>Scan37</b></a>   
   
         <BR><BR><BR>
         
