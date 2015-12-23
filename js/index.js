@@ -94,6 +94,10 @@ var app = {
 	 		var url = "https://ds503.awmdm.co.uk/devicemanagement/AppCatalog?uid="+string+"&type=2#"
 	 		alert("url = " + url);
 	 		//window.open(url, '_system');
+	 		if (string != null && string != "null" && string != "") {
+	 			window.open(url, '_system');
+	 		}
+	 		
         }
 };
 console.log("WEB - read index.js");
