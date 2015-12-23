@@ -1971,6 +1971,8 @@ utils.alert = function(msg) {
 
 });
 
+console.log("WEB - android cordova.js");
+
 window.cordova = require('cordova');
 // file: src/scripts/bootstrap.js
 
