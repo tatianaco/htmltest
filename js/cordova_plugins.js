@@ -22,6 +22,14 @@ module.exports = [
             "cordova.InAppBrowser.open",
             "window.open"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-device/www/device.js",
+        "id": "cordova-plugin-device.device",
+        "pluginId": "cordova-plugin-device",
+        "clobbers": [
+            "device"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -29,7 +37,8 @@ module.exports.metadata =
 {
     "cordova-plugin-whitelist": "1.2.0",
     "phonegap-plugin-barcodescanner": "4.1.0",
-    "cordova-plugin-inappbrowser": "1.1.1"
+    "cordova-plugin-inappbrowser": "1.1.1",
+    "cordova-plugin-device": "1.1.0"
 }
 // BOTTOM OF METADATA
 });
