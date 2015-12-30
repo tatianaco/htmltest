@@ -127,6 +127,4 @@ module.exports = barcodeScanner;
 
 });
 
-ScannerLoader(require, exports, module);
 
-cordova.define("cordova/plugin/BarcodeScanner", ScannerLoader);
