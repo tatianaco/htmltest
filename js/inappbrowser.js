@@ -25,7 +25,7 @@ if (window.parent && !!window.parent.ripple) { // https://gist.github.com/tricea
     return;
 }
 
-console.log("WEB - in app browser launched");
+
 
 var exec = require('cordova/exec');
 var channel = require('cordova/channel');
