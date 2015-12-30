@@ -99,6 +99,16 @@ var app = {
 	 			window.open(url, '_system');
 	 		}
 	 		
+        },
+        openAcademyLink: function () {
+        	try {
+        		var inappbrowser = window.cordova.require('cordova-plugin-inappbrowser.inappbrowser');
+        	} catch(e) {
+        		console.log("WEB - inappbrowser not working");
+        	}
+        	
+        	
+
         }
 };
 console.log("WEB - read index.js");
