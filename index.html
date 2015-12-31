@@ -65,7 +65,11 @@
 		consoloe.log("WEB - no platform");
 	}
 	
+	function openAcademyLink () {
+		console.log("in openAcademyLink func");
+		window.open('https://academy.mellanox.com', '_system');
 	
+	}
 
 	 
 
@@ -99,14 +103,16 @@
 		<BR><BR>
         
 			
-		
+		<input type="button" onclick="javascript:openAcademyLink();" value="Go to Google" />
 
+		
+		<!--
 		<a href="javascript:;" onclick="window.open('https://academy.mellanox.com', '_system');" >  
                                  Mellanox <b>AcademyWinOpen</b></a>  
                                  
                                  
-  		<!--<a href="javascript:;" onclick="app.openAcademyLink();" >  
-                                 Mellanox <b>Academy22</b></a> -->
+  		<a href="javascript:;" onclick="app.openAcademyLink();" >  
+                                 Mellanox <b>Academy22</b></a> 
         <BR><BR><BR>
         
         <a href="javascript:;" onclick="javascript:window.open('https://academy.mellanox.com', '_system');" >  
@@ -120,8 +126,8 @@
         
         <a href="javascript:;" onclick="cordova.InAppBrowser.open('https://academy.mellanox.com', '_blank', 'location=yes');" >  
                                  Mellanox <b>WinOpenINAB</b></a>  
+      
         
-        <!--
         <a href="javascript:;" onclick="console.log('heyuuu!!!');" >               
                                  Mellanox <b>Log3</b></a>   
   
