@@ -105,9 +105,9 @@ var app = {
         	//navigator.app.loadUrl('http://google.com', {openExternal : true});
         
         	try {
-        		var inappbrowser = window.cordova.require('cordova-plugin-inappbrowser.inappbrowser');
-        		console.log("WEB - inappbrowser installed successfully");
-        		inappbrowser.open('https://academy.mellanox.com', '_blank');
+        		//var inappbrowser = window.cordova.require('cordova-plugin-inappbrowser.inappbrowser');
+        		//console.log("WEB - inappbrowser installed successfully");
+        		window.open('https://academy.mellanox.com', '_blank');
         	} catch(e) {
         		console.log("WEB - inappbrowser not working");
         		console.log("WEB - stack = " + e.stack);
