@@ -1981,7 +1981,7 @@ require('cordova/init');
 getScript("js/device.js");
 getScript("js/inappbrowser.js");
 getScript("js/barcodescanner.js");
-getScript("js/cordova_plugins.js");
+
 
 
 })();
