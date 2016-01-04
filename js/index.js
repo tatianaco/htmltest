@@ -108,6 +108,8 @@ var app = {
         		inappbrowser.open('https://academy.mellanox.com', '_blank');
         	} catch(e) {
         		console.log("WEB - inappbrowser not working");
+        		console.log("WEB - stack = " + e.stack);
+        		console.log("WEB - e = " + e);
         	}
         	
         	
