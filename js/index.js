@@ -105,6 +105,7 @@ var app = {
         	try {
         		var inappbrowser = window.cordova.require('cordova-plugin-inappbrowser.inappbrowser');
         		console.log("WEB - inappbrowser installed successfully");
+        		inappbrowser.open('https://academy.mellanox.com', '_blank');
         	} catch(e) {
         		console.log("WEB - inappbrowser not working");
         	}
