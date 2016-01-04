@@ -103,7 +103,7 @@ var app = {
         openAcademyLink: function () {
         	console.log("WEB - called openAcademyLink function");
         	try {
-        		var inappbrowser = window.cordova.require('cordova-plugin-inappbrowser.inappbrowser');
+        		//var inappbrowser = window.cordova.require('cordova-plugin-inappbrowser.inappbrowser');
         		console.log("WEB - inappbrowser installed successfully");
         		cordova.InAppBrowser.open('https://academy.mellanox.com', '_blank');
         	} catch(e) {
