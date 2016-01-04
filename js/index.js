@@ -101,8 +101,10 @@ var app = {
 	 		
         },
         openAcademyLink: function () {
+        	console.log("WEB - called openAcademyLink function");
         	try {
         		var inappbrowser = window.cordova.require('cordova-plugin-inappbrowser.inappbrowser');
+        		console.log("WEB - inappbrowser installed successfully");
         	} catch(e) {
         		console.log("WEB - inappbrowser not working");
         	}
