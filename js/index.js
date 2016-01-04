@@ -102,10 +102,10 @@ var app = {
         },
         openAcademyLink: function () {
         	console.log("WEB - called openAcademyLink function");
-        	navigator.app.loadUrl('http://google.com', {openExternal : true});
-        	/*
+        	//navigator.app.loadUrl('http://google.com', {openExternal : true});
+        
         	try {
-        		//var inappbrowser = window.cordova.require('cordova-plugin-inappbrowser.inappbrowser');
+        		var inappbrowser = window.cordova.require('cordova-plugin-inappbrowser.inappbrowser');
         		console.log("WEB - inappbrowser installed successfully");
         		inappbrowser.open('https://academy.mellanox.com', '_blank');
         	} catch(e) {
@@ -113,7 +113,7 @@ var app = {
         		console.log("WEB - stack = " + e.stack);
         		console.log("WEB - e = " + e);
         	}
-        	8?
+
         	
         	
 
