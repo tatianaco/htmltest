@@ -108,7 +108,9 @@ var app = {
         		//var inappbrowser = window.cordova.require('cordova-plugin-inappbrowser.inappbrowser');
         		//console.log("WEB - inappbrowser installed successfully");
         		//window.cordova.InAppBrowser.open('https://academy.mellanox.com', '_system');
-        		window.cordova.exec(function(){}, null, "InAppBrowser", "open", ["http://www.google.com/", "_system", "location=yes"]);
+        		var cordovaRef = window.PhoneGap || window.Cordova || window.cordova;
+        		//window.cordova.exec(function(){}, null, "InAppBrowser", "open", ["http://www.google.com/", "_system", "location=yes"]);
+        		cordovaRef.InAppBrowser.open('https://academy.mellanox.com', '_system');
         	} catch(e) {
         		console.log("WEB - inappbrowser not working");
         		console.log("WEB - stack = " + e.stack);
