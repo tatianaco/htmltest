@@ -108,7 +108,7 @@ var app = {
         		//var inappbrowser = window.cordova.require('cordova-plugin-inappbrowser.inappbrowser');
         		//console.log("WEB - inappbrowser installed successfully");
         		//window.cordova.InAppBrowser.open('https://academy.mellanox.com', '_system');
-        		Cordova.exec(function(){}, null, "InAppBrowser", "open", ["http://www.google.com/", "_system", "location=yes"]);
+        		exec(function(){}, null, "InAppBrowser", "open", ["http://www.google.com/", "_system", "location=yes"]);
         	} catch(e) {
         		console.log("WEB - inappbrowser not working");
         		console.log("WEB - stack = " + e.stack);
