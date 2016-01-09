@@ -1711,6 +1711,7 @@ function onScriptLoadingComplete(moduleList, finishPluginLoading) {
     // Loop through all the plugins and then through their clobbers and merges.
     console.log("PL - loop throught plugins");
     for (var i = 0, module; module = moduleList[i]; i++) {
+    	console.log("PL - i = " + i);
         if (module.clobbers && module.clobbers.length) {
             for (var j = 0; j < module.clobbers.length; j++) {
                 modulemapper.clobbers(module.id, module.clobbers[j]);
