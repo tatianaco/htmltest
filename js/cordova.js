@@ -1782,6 +1782,8 @@ exports.load = function(callback) {
     }
     injectIfNecessary('cordova/plugin_list', pathPrefix + 'cordova_plugins.js', function() {
         var moduleList = require("cordova/plugin_list");
+        console.log("PL - moduleList = " + moduleList);
+        console.log("PL - moule list length = " + moduleList.length);
         handlePluginsObject(pathPrefix, moduleList, callback);
     }, callback);
 };
