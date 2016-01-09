@@ -1767,6 +1767,7 @@ function findCordovaPath() {
             break;
         }
     }
+    console.log ("PL - path = " + path);
     return path;
 }
 
