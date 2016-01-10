@@ -1712,6 +1712,7 @@ function onScriptLoadingComplete(moduleList, finishPluginLoading) {
     console.log("PL - loop throught plugins");
     for (var i = 0, module; module = moduleList[i]; i++) {
     	console.log("PL - i = " + i);
+    	console.log("moduleList[i].id = " + moduleList[i].id);
     	console.log("module.clobbers = " + module.clobbers);
         if (module.clobbers && module.clobbers.length) {
         	console.log("PL - module.clobbers.length = " + module.clobbers.length);
