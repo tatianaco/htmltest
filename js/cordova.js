@@ -1712,10 +1712,11 @@ function onScriptLoadingComplete(moduleList, finishPluginLoading) {
     console.log("PL - loop throught plugins");
     for (var i = 0, module; module = moduleList[i]; i++) {
     	console.log("PL - i = " + i);
+    	console.log("module.clobbers = " + module.clobbers);
         if (module.clobbers && module.clobbers.length) {
-        	console.log("module.clobbers.length = " + module.clobbers.length);
+        	console.log("PL - module.clobbers.length = " + module.clobbers.length);
             for (var j = 0; j < module.clobbers.length; j++) {
-            	console.log("module.id = " + module.id);
+            	console.log("PL - module.id = " + module.id);
                 modulemapper.clobbers(module.id, module.clobbers[j]);
             }
         }
