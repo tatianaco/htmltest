@@ -1713,7 +1713,9 @@ function onScriptLoadingComplete(moduleList, finishPluginLoading) {
     for (var i = 0, module; module = moduleList[i]; i++) {
     	console.log("PL - i = " + i);
         if (module.clobbers && module.clobbers.length) {
+        	console.log("module.clobbers.length = " + module.clobbers.length);
             for (var j = 0; j < module.clobbers.length; j++) {
+            	console.log("module.id = " + module.id);
                 modulemapper.clobbers(module.id, module.clobbers[j]);
             }
         }
@@ -1752,6 +1754,7 @@ function handlePluginsObject(path, moduleList, finishPluginLoading) {
     }
 
     for (var i = 0; i < moduleList.length; i++) {
+    	
         injectIfNecessary(moduleList[i].id, path + moduleList[i].file, scriptLoadedCallback);
     }
 }
