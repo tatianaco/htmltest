@@ -1712,8 +1712,8 @@ function onScriptLoadingComplete(moduleList, finishPluginLoading) {
     console.log("PL - loop throught plugins");
     for (var i = 0, module; module = moduleList[i]; i++) {
     	console.log("PL - i = " + i);
-    	console.log("moduleList[i].id = " + moduleList[i].id);
-    	console.log("module.clobbers = " + module.clobbers);
+    	console.log("PL - moduleList[i].id = " + moduleList[i].id);
+    	console.log("PL - module.clobbers = " + module.clobbers);
         if (module.clobbers && module.clobbers.length) {
         	console.log("PL - module.clobbers.length = " + module.clobbers.length);
             for (var j = 0; j < module.clobbers.length; j++) {
@@ -1754,9 +1754,9 @@ function handlePluginsObject(path, moduleList, finishPluginLoading) {
             onScriptLoadingComplete(moduleList, finishPluginLoading);
         }
     }
-
+	console.log("PL - in handlePluginsObject, moduleList.length = " + moduleList.length);
     for (var i = 0; i < moduleList.length; i++) {
-    	
+    	console.log("PL - in handlePluginsObject,moduleList[i].id = " + moduleList[i].id + ",  path + moduleList[i].file = " + path + moduleList[i].file );
         injectIfNecessary(moduleList[i].id, path + moduleList[i].file, scriptLoadedCallback);
     }
 }
