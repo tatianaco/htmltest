@@ -1732,9 +1732,9 @@ function onScriptLoadingComplete(moduleList, finishPluginLoading) {
             modulemapper.runs(module.id);
         }
     }
-
     finishPluginLoading();
 }
+
 
 // Handler for the cordova_plugins.js content.
 // See plugman's plugin_loader.js for the details of this object.
