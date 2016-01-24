@@ -51,6 +51,7 @@ header {
 }
 
 
+
 input[type="text"]
 {
 	margin-left: 30px;
@@ -60,9 +61,9 @@ input[type="text"]
      background-image: url("../images/search.png");
   	background-position: right;
   	background-repeat: no-repeat;
-	
-    
 }
+
+
 
 
 ::-webkit-input-placeholder {
