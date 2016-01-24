@@ -15,9 +15,6 @@ header {
 	color: rgb(106, 108 , 111);
 	font-size:24px;
 	vertical-align: middle;
-	
-	
-
 }
 
 .header-line {
@@ -40,7 +37,7 @@ header {
 
 .div_or_p {
 	color: rgb(106, 108 , 111);
-	font-size: 38px;
+	font-size: 40px;
 }
 
 .div_button {
@@ -57,7 +54,8 @@ header {
 input[type="text"]
 {
 	margin-left: 30px;
-	width: calc(100vh - 60px);
+	width: calc(100vw - 60px);
+	height:25px;
     font-size:16px;
 }
 
