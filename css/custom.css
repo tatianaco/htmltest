@@ -13,7 +13,7 @@ header {
 
 .header-title{
 	color: rgb(106, 108 , 111);
-	font-size:25px;
+	font-size:24px;
 	vertical-align: middle;
 	
 	
@@ -40,7 +40,7 @@ header {
 
 .div_or_p {
 	color: rgb(106, 108 , 111);
-	font-size: 35px;
+	font-size: 38px;
 }
 
 .div_button {
@@ -49,7 +49,7 @@ header {
 
 .scan_label {
 	color: rgb(106, 108 , 111);
-	font-size:25px;
+	font-size:22px;
 	text-align: center;
 }
 
