@@ -133,10 +133,13 @@ function showView() {
 	var touchElement = document.createElement('div');
 	touchElement.style.width = "100%";
 	touchElement.style.height = "100vh";
-	touchElement.style.bottom = "100vh";
+	touchElement.style.bottom = "0";
 	touchElement.style.backgroundColor = "rgba( 0 , 0 , 0 , 0.2)";
-	touchElement.style.position = 'absolute';
-	document.getElementById( "geo_buttons").appendChild(touchElement);
+	touchElement.style.position = 'fixed';
+	
+	document.body.appendChild(touchElement);
+	touchElement.style.zIndex =  '1000';
+	console.log("we are here");
 	
 	var newElement =  document.createElement('div');
 	newElement.style.textAlign = "center"; 
@@ -598,7 +601,7 @@ function onLoad() {
 <body style="background-color: #eee;" onload= "javascript:onLoad()">
 
 
-<div class="col-xs-12 col-sm-12 col-md-3 col-lg-12" style="padding:10px;">
+<div class="col-xs-12 col-sm-12 col-md-3 col-lg-12" style="padding:10px;" >
   <div class="hpanel hblue">
 	  <div class="panel-heading hbuilt text-center">
 		  <h4 class="font-bold">Drive To Site</h4>
@@ -607,7 +610,7 @@ function onLoad() {
 		  <p class="text-muted text-center" id="div_nav_buttons_label" style="display: none;">
 			  Choose your preferred navigation App
 		  </p>
-		  <div data-toggle="buttons" align="center" style="width:100%;" id="geo_apps" stylse="margin-bottom:15;">
+		  <div data-toggle="buttons" align="center" style="width:100%;" id="geo_apps" style="margin-bottom:15;">
 		  </div>
 		  <p class="text-muted text-center" style="padding: 0px;" id="p_choose_your_dest_label">
 			  Choose your destination site
