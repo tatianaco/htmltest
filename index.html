@@ -1,6 +1,10 @@
 
 <!-- saved from url=(0038)https://tools-qa.mellanox.com/driveto/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="Drive To_files/custom.js"></script>
+<script>
 	var geo_sites = new Array();
 	var nv_apps = new Array();
 	
@@ -60,6 +64,9 @@
 	
 
 function navigate( event){
+	showView();
+
+/*
 	var i = event.target.tag;
 	var dkm;
 	dkm= geo_sites[ i ] [ 10 ] ;
@@ -81,6 +88,8 @@ function navigate( event){
 	if ( nv_selected ==2 ) 
 		console.log("case nv_selected == 2");
 		location = "http://maps.apple.com/?q=Mellanox&ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&z=17&navigate=yes" ;
+
+	*/		
 }
 
 
@@ -119,8 +128,19 @@ function showPositionYokneam() {
 }
 
 
-function showView () {
+function showView() {
+	
+	var newElement =  document.createElement('div');
+	newElement.style.textAlign = "center"; 
 
+	newElement.style.width = "100%";
+	newElement.style.height = "400px";
+	newElement.style.position = 'absolute';
+	newElement.style.bottom = '0';
+	newElement.style.backgroundColor = '#00FFFF';
+	document.getElementById( "geo_buttons").appendChild(newElement);
+
+	
 }
 
 
@@ -485,6 +505,11 @@ function onCityClick (event) {
 }
 
 
+function createAppChooseView () {
+	var newElement =  document.createElement('div');
+	newElement.style.textAlign = "center"; 
+	
+}
 
 
 	
@@ -557,10 +582,11 @@ function onLoad() {
 	<link rel="stylesheet" href="./Drive To_files/pe-icon-7-stroke.css">
 	<link rel="stylesheet" href="./Drive To_files/helper.css">
 	<link rel="stylesheet" href="./Drive To_files/style.css">
+	
 
-  </head>
+</head>
   
-  <body style="background-color: #eee;" onload= "javascript:onLoad()">
+<body style="background-color: #eee;" onload= "javascript:onLoad()">
 
 
 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-12" style="padding:10px;">
