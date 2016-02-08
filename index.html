@@ -260,6 +260,35 @@ function showView() {
 	googleDiv.appendChild(googleLabel);
 	
 	
+	var buttonsDiv = document.createElement('div');
+	buttonsDiv.style.backgroundColor = '#ffa3a3';
+	buttonsDiv.style.marginTop = '10px';
+	buttonsDiv.style.bottom = '0';
+	buttonsDiv.style.height = '40px';
+	buttonsDiv.style.width = '100%';
+	buttonsDiv.style.display = 'flex';
+	innerDiv.appendChild(buttonsDiv);
+	
+	var emptyDiv = document.createElement('div');
+	emptyDiv.style.height = '100%';
+	emptyDiv.style.display = 'block';
+	emptyDiv.style.backgroudColor = '#FFFFFF';
+	emptyDiv.style.textAlign = 'center';
+	emptyDiv.style.flex = '1';
+	emptyDiv.style['-webkit-flex'] = '1';
+	buttonsDiv.appendChild(emptyDiv);
+	
+	var onceDiv = document.createElement('div');
+	onceDiv.style.height = '100%';
+	onceDiv.style.display = 'block';
+	onceDiv.style.backgroudColor = '#FFFFFF';
+	onceDiv.style.textAlign = 'center';
+	onceDiv.style.flex = '1';
+	onceDiv.style['-webkit-flex'] = '1';
+	buttonsDiv.appendChild(onceDiv);
+	
+	
+	
 	console.log("we are here");
 	
 	
