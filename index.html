@@ -168,7 +168,7 @@ function showView() {
 	title.innerHTML = 'Open with';
 	title.style.color = '#000000';
 	title.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
-	title.style.fontSize = '25px';
+	title.style.fontSize = '22px';
 	innerDiv.appendChild(title);
 	
 	var iconsDiv = document.createElement('div');
@@ -188,13 +188,14 @@ function showView() {
 	wazeDiv.style.flex = '1';
 	wazeDiv.style['-webkit-flex'] = '1';
 	wazeDiv.style.textAlign = 'center';
+	wazeDiv.style.paddingTop = '25px';
 	iconsDiv.appendChild(wazeDiv);
 	
 	
 	var wazeImg = document.createElement('img');
 	wazeImg.src = "images/waze.jpeg";
-	wazeImg.style.width = '100px';
-	wazeImg.style.height = '100px';
+	wazeImg.style.width = '50px';
+	wazeImg.style.height = '50px';
 	wazeDiv.appendChild(wazeImg);
 	
 	var wazeLabel = document.createElement('p');
@@ -202,7 +203,7 @@ function showView() {
 	wazeLabel.style.color = '#000000';
 	wazeLabel.style.paddingTop = '20px';
 	wazeLabel.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
-	wazeLabel.style.fontSize = '20px';
+	wazeLabel.style.fontSize = '16px';
 	wazeDiv.appendChild(wazeLabel);
 	
 	
@@ -213,14 +214,15 @@ function showView() {
 	appleDiv.style.display = 'flex';
 	appleDiv.style.display = 'block';
 	appleDiv.style.textAlign = 'center';
+	appleDiv.style.paddingTop = '25px';
 	appleDiv.style.flex = '1';
 	appleDiv.style['-webkit-flex'] = '1';
 	iconsDiv.appendChild(appleDiv);
 	
 	var appleImg = document.createElement('img');
 	appleImg.src = "images/apple-maps.png";
-	appleImg.style.width = '100px';
-	appleImg.style.height = '100px';
+	appleImg.style.width = '50px';
+	appleImg.style.height = '50px';
 	appleDiv.appendChild(appleImg);
 	
 	var appleLabel = document.createElement('p');
@@ -228,7 +230,7 @@ function showView() {
 	appleLabel.style.color = '#000000';
 	appleLabel.style.paddingTop = '20px';
 	appleLabel.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
-	appleLabel.style.fontSize = '20px';
+	appleLabel.style.fontSize = '16px';
 	appleDiv.appendChild(appleLabel);
 	
 	
@@ -238,13 +240,14 @@ function showView() {
 	googleDiv.style['-webkit-flex'] = '1';
 	googleDiv.style.display = 'block';
 	googleDiv.style.textAlign = 'center';
+	googleDiv.style.paddingTop = '25px';
 	googleDiv.style.height = '100%';
 	iconsDiv.appendChild(googleDiv);
 	
 	var googleImg = document.createElement('img');
 	googleImg.src = "images/google-maps.png";
-	googleImg.style.width = '100px';
-	googleImg.style.height = '100px';
+	googleImg.style.width = '50px';
+	googleImg.style.height = '50px';
 	googleDiv.appendChild(googleImg);
 	
 	
@@ -253,7 +256,7 @@ function showView() {
 	googleLabel.style.color = '#000000';
 	googleLabel.style.paddingTop = '20px';
 	googleLabel.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
-	googleLabel.style.fontSize = '20px';
+	googleLabel.style.fontSize = '16px';
 	googleDiv.appendChild(googleLabel);
 	
 	
