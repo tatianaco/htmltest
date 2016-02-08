@@ -176,12 +176,65 @@ function showView() {
 	iconsDiv.style.marginTop = '10px';
 	iconsDiv.style.height = '170px';
 	iconsDiv.style.width = '100%';
+	iconsDiv.style.display = 'flex';
 	innerDiv.appendChild(iconsDiv);
 	
 	
 	
 	var wazeDiv = document.createElement('div');
-	wazeDiv.style.backgroundColor = '#AAAAAA';
+	wazeDiv.style.backgroundColor = '#CCCCCC';
+	wazeDiv.style.height = '100%';
+	wazeDiv.style.display = 'block';
+	wazeDiv.style.flex = '1';
+	wazeDiv.style['-webkit-flex'] = '1';
+	wazeDiv.textAlign = 'center';
+	iconsDiv.appendChild(wazeDiv);
+	
+	var wazeImg = document.createElement('img');
+	wazeImg.src = "images/waze.jpeg";
+	wazeImg.style.width = '100px';
+	wazeImg.style.height = '100px';
+	wazeDiv.appendChild(wazeImg);
+	
+	var wazeLabel = document.createElement('p');
+	wazeLabel.innerHTML = "Waze";
+	wazeLabel.style.color = '#000000';
+	wazeLabel.style.paddingTop = '20px';
+	title.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
+	title.style.fontSize = '15px';
+	wazeDiv.appendChild(wazeLabel);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	var appleDiv = document.createElement('div');
+	appleDiv.style.backgroundColor = '#AAAAAA';
+	appleDiv.style.height = '100%';
+	appleDiv.style.display = 'flex';
+	appleDiv.style.flex = '1';
+	appleDiv.style['-webkit-flex'] = '1';
+	iconsDiv.appendChild(appleDiv);
+	
+	
+	var googleDiv = document.createElement('div');
+	googleDiv.style.backgroundColor = '#999999';
+	googleDiv.style.flex = '1';
+	googleDiv.style['-webkit-flex'] = '1';
+	googleDiv.style.display = 'flex';
+	
+	googleDiv.style.height = '100%';
+	
+	//googleDiv.style.width = '33%';
+	iconsDiv.appendChild(googleDiv);
+	
+	
+	
 	
 	
 	
@@ -614,7 +667,6 @@ function onLoad() {
 
 </script>
 
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -637,13 +689,12 @@ function onLoad() {
 	<link rel="stylesheet" href="./Drive To_files/helper.css">
 	<link rel="stylesheet" href="./Drive To_files/style.css">
 	
-
 </head>
   
 <body style="background-color: #eee;" onload= "javascript:onLoad()">
 
 
-<div class="col-xs-12 col-sm-12 col-md-3 col-lg-12" style="padding:10px;" >
+<div class="col-xs-12 col-sm-12 col-md-3 col-lg-12" style="padding:10px; " >
   <div class="hpanel hblue">
 	  <div class="panel-heading hbuilt text-center">
 		  <h4 class="font-bold">Drive To Site</h4>
