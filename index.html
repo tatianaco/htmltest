@@ -139,7 +139,7 @@ function showView() {
 	
 	document.body.appendChild(touchElement);
 	touchElement.style.zIndex =  '1000';
-	console.log("we are here");
+	
 	
 	var newElement =  document.createElement('div');
 	newElement.style.textAlign = "center"; 
@@ -149,7 +149,38 @@ function showView() {
 	newElement.style.bottom = "0";
 	newElement.style.position = 'absolute';
 	newElement.style.backgroundColor = '#FFFFFF';
+	newElement.style.paddingLeft = '20px';
+	newElement.style.paddingRight = '20px';
 	touchElement.appendChild(newElement);
+	
+	
+	var innerDiv = document.createElement('div');
+	innerDiv.style.backgroundColor = '#cedd05';
+	innerDiv.style.width = '100%';
+	innerDiv.style.height = '100%';
+	innerDiv.style.bottom = "0";
+	innerDiv.style.position = 'absolute';
+	innerDiv.style.textAlign = 'left';
+	innerDiv.style.paddingTop = "10px";
+	newElement.appendChild(innerDiv);
+	
+	var title = document.createElement('p');
+	title.innerHTML = 'Open with';
+	title.style.color = '#000000';
+	title.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
+	title.style.fontSize = '19px';
+	
+	var wazeDiv = document.createElement('div');
+	wazeDiv.style.backgroundColor = '#AAAAAA';
+	
+	
+	
+	innerDiv.appendChild(title);
+	
+	
+	
+	
+	console.log("we are here");
 	
 	
 
