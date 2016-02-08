@@ -129,16 +129,26 @@ function showPositionYokneam() {
 
 
 function showView() {
+
+	var touchElement = document.createElement('div');
+	touchElement.style.width = "100%";
+	touchElement.style.height = "100vh";
+	touchElement.style.bottom = "100vh";
+	touchElement.style.backgroundColor = "rgba( 0 , 0 , 0 , 0.2)";
+	touchElement.style.position = 'absolute';
+	document.getElementById( "geo_buttons").appendChild(touchElement);
 	
 	var newElement =  document.createElement('div');
 	newElement.style.textAlign = "center"; 
 
 	newElement.style.width = "100%";
-	newElement.style.height = '200px';
-	newElement.style.bottom = "calc(100vh - 200px)";
+	newElement.style.height = '300px';
+	newElement.style.bottom = "calc(100vh - 300px)";
 	newElement.style.position = 'absolute';
 	newElement.style.backgroundColor = '#00FFFF';
 	document.getElementById( "geo_buttons").appendChild(newElement);
+	
+	
 
 }
 
