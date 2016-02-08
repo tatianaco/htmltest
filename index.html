@@ -187,8 +187,9 @@ function showView() {
 	wazeDiv.style.display = 'block';
 	wazeDiv.style.flex = '1';
 	wazeDiv.style['-webkit-flex'] = '1';
-	wazeDiv.textAlign = 'center';
+	wazeDiv.style.textAlign = 'center';
 	iconsDiv.appendChild(wazeDiv);
+	
 	
 	var wazeImg = document.createElement('img');
 	wazeImg.src = "images/waze.jpeg";
@@ -206,42 +207,54 @@ function showView() {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
 	var appleDiv = document.createElement('div');
 	appleDiv.style.backgroundColor = '#AAAAAA';
 	appleDiv.style.height = '100%';
 	appleDiv.style.display = 'flex';
+	appleDiv.style.display = 'block';
+	appleDiv.style.textAlign = 'center';
 	appleDiv.style.flex = '1';
 	appleDiv.style['-webkit-flex'] = '1';
 	iconsDiv.appendChild(appleDiv);
+	
+	var appleImg = document.createElement('img');
+	appleImg.src = "images/apple-maps.png";
+	appleImg.style.width = '100px';
+	appleImg.style.height = '100px';
+	appleDiv.appendChild(appleImg);
+	
+	var appleLabel = document.createElement('p');
+	appleLabel.innerHTML = "Apple Maps";
+	appleLabel.style.color = '#000000';
+	appleLabel.style.paddingTop = '20px';
+	appleLabel.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
+	appleLabel.style.fontSize = '20px';
+	appleDiv.appendChild(appleLabel);
 	
 	
 	var googleDiv = document.createElement('div');
 	googleDiv.style.backgroundColor = '#999999';
 	googleDiv.style.flex = '1';
 	googleDiv.style['-webkit-flex'] = '1';
-	googleDiv.style.display = 'flex';
-	
+	googleDiv.style.display = 'block';
+	googleDiv.style.textAlign = 'center';
 	googleDiv.style.height = '100%';
-	
-	//googleDiv.style.width = '33%';
 	iconsDiv.appendChild(googleDiv);
 	
+	var googleImg = document.createElement('img');
+	googleImg.src = "images/google-maps.png";
+	googleImg.style.width = '100px';
+	googleImg.style.height = '100px';
+	googleDiv.appendChild(googleImg);
 	
 	
-	
-	
-	
-	
-	
-	
-	
+	var googleLabel = document.createElement('p');
+	googleLabel.innerHTML = "Google Maps";
+	googleLabel.style.color = '#000000';
+	googleLabel.style.paddingTop = '20px';
+	googleLabel.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
+	googleLabel.style.fontSize = '20px';
+	googleDiv.appendChild(googleLabel);
 	
 	
 	console.log("we are here");
