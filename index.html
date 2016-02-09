@@ -151,6 +151,7 @@ function showView() {
 	touchElement.style.height = "100vh";
 	touchElement.style.bottom = "0";
 	touchElement.id = "touchElement";
+	
 	touchElement.style.backgroundColor = "rgba( 0 , 0 , 0 , 0.3)";
 	touchElement.style.position = 'fixed';
 	if (touchElement.addEventListener) {
@@ -172,12 +173,112 @@ function showView() {
 	newElement.style.height = '250px';
 	newElement.style.bottom = "0";
 	newElement.style.position = 'absolute';
-	newElement.style.backgroundColor = '#FFFFFF';
+	newElement.style.backgroundColor = '#e4ddd7';
 	newElement.style.paddingLeft = '20px';
 	newElement.style.paddingRight = '20px';
+	newElement.style.display = 'inline-block';
+	newElement.style.textAlign = 'center';
 	touchElement.appendChild(newElement);
 	
+	var chooseDiv = document.createElement('div');
+	chooseDiv.style.height = '150px';
+	chooseDiv.style.width = '95%';
+	chooseDiv.style.overflow = "hidden";
+	/*
+	-webkit-border-radius: 10px;
+	 -moz-border-radius: 10px;
+	 -o-border-radius: 10px;
+	 -ms-border-radius: 10px;
+	 -khtml-border-radius: 10px;
+	 border-radius: 10px;
+	*/
+	var cornerRadius = '10px';
+	//chooseDiv.style["-webkit-border-radius"] = cornerRadius;
+	//chooseDiv.style["-moz-border-radius"] = cornerRadius;
+	//chooseDiv.style["-o-border-radius"] = cornerRadius;
+	//chooseDiv.style["-ms-border-radius"] = cornerRadius;
+	//chooseDiv.style["-khtml-border-radius"] = cornerRadius;
+	//chooseDiv.style["border-radius"] = cornerRadius;
+	chooseDiv.style.backgroundColor = "#FFFFFF";
+	chooseDiv.style.display = "inline-block";
+	newElement.appendChild(chooseDiv);
 	
+	
+	var appleDiv = document.createElement('div');
+	appleDiv.style.width = '100%';
+	appleDiv.style["-moz-border-radius"] = "10px 10px 0 0";
+	appleDiv.style["-webkit-border-radius"] = "10px 10px 0 0";
+	appleDiv.style["-ms-border-radius"] = "10px 10px 0 0";
+	appleDiv.style["-o-border-radius"] = "10px 10px 0 0";
+	appleDiv.style["-khtml-border-radius"] = "10px 10px 0 0";
+	appleDiv.style["border-radius"] = "10px 10px 0 0";
+	appleDiv.style.display = 'block';
+	appleDiv.style.height = "50px";
+	appleDiv.style.flex = '1';
+	appleDiv.style['-webkit-flex'] = '1';
+	appleDiv.style.backgroundColor = "#B3CC99";
+	appleDiv.style.stroke = "#CCCCCC";
+    appleDiv.style.strokeWidth = '1px';
+    chooseDiv.appendChild(appleDiv);
+    
+    
+    
+	
+	var googleDiv = document.createElement('div');
+	googleDiv.style.width = '100%';
+	googleDiv.style.display = 'block';
+	googleDiv.style.flex = '1';
+	googleDiv.style['-webkit-flex'] = '1';
+	googleDiv.style.backgroundColor = "#088da5";
+	googleDiv.style.stroke = "#088da5";
+	googleDiv.style.height = "50px";
+    googleDiv.style.strokeWidth = '1px';
+    
+	chooseDiv.appendChild(googleDiv);
+    
+    
+    var wazeDiv = document.createElement('div');
+	wazeDiv.style.width = '100%';
+	wazeDiv.style.display = 'block';
+	wazeDiv.style.flex = '1';
+	wazeDiv.style['-webkit-flex'] = '1';
+	wazeDiv.style.backgroundColor = "#e297a3";
+	wazeDiv.style.stroke = "#088da5";
+	wazeDiv.style.height = "50px";
+    wazeDiv.style.strokeWidth = '1px';
+    wazeDiv.style["-moz-border-radius"] = "0 0 10px 10px";
+	wazeDiv.style["-webkit-border-radius"] = "0 0 10px 10px";
+	wazeDiv.style["-ms-border-radius"] = "0 0 10px 10px";
+	wazeDiv.style["-o-border-radius"] = "0 0 10px 10px";
+	wazeDiv.style["-khtml-border-radius"] = "0 0 10px 10px";
+	wazeDiv.style["border-radius"] = "0 0 10px 10px";
+    chooseDiv.appendChild(wazeDiv);
+    
+    
+    var cancelDiv = document.createElement('div');
+	cancelDiv.style.width = '90%';
+	cancelDiv.style["-moz-border-radius"] = "10px 10px 10px 10px";
+	cancelDiv.style["-webkit-border-radius"] = "10px 10px 10px 10px";
+	cancelDiv.style["-ms-border-radius"] = "10px 10px 10px 10px";
+	cancelDiv.style["-o-border-radius"] = "10px 10px 10px 10px";
+	cancelDiv.style["-khtml-border-radius"] ="10px 10px 10px 10px";
+	cancelDiv.style["border-radius"] = "10px 10px 10px 10px";
+	cancelDiv.style.display = 'block';
+	cancelDiv.style.height = "50px";
+	cancelDiv.style.position = 'absolute';
+	cancelDiv.style.bottom = "0";
+	cancelDiv.style.backgroundColor = "#B3CC99";
+	cancelDiv.style.stroke = "#CCCCCC";
+    cancelDiv.style.strokeWidth = '1px';
+    newElement.appendChild(cancelDiv);
+    
+    
+    
+    
+	
+
+	
+	/*
 	var innerDiv = document.createElement('div');
 	innerDiv.style.backgroundColor = '#cedd05';
 	innerDiv.style.width = '100%';
@@ -321,7 +422,7 @@ function showView() {
 	alwaysDiv.style['-webkit-flex'] = '1';
 	buttonsDiv.appendChild(alwaysDiv);
 	
-	
+	*/
 	
 	
 	console.log("we are here");
