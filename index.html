@@ -131,7 +131,15 @@ function showPositionYokneam() {
 
 function closeCustomView (event) {
 	console.log("in closeCustomView func");
-	document.getElementById("touchElement").remove();
+	var target = event.target;
+	
+	if (target.id == "touchElement") {
+	
+		target.remove();
+		var eventPhase = event.eventPhase;
+		console.log("onTouchElementClick , eventPhase = " + eventPhase); 
+	}
+	
 
 }
 
