@@ -11,6 +11,8 @@
 	var detected = 0;
 	var nv_selected = 1 ;
 	
+	
+	
 	var nv_lat = 0;
 	var nv_lon = 0;
 	
@@ -127,6 +129,12 @@ function showPositionYokneam() {
 
 }
 
+function closeCustomView (event) {
+	console.log("in closeCustomView func");
+	document.getElementById("touchElement").remove();
+
+}
+
 
 function showView() {
 
@@ -134,8 +142,16 @@ function showView() {
 	touchElement.style.width = "100%";
 	touchElement.style.height = "100vh";
 	touchElement.style.bottom = "0";
-	touchElement.style.backgroundColor = "rgba( 0 , 0 , 0 , 0.2)";
+	touchElement.id = "touchElement";
+	touchElement.style.backgroundColor = "rgba( 0 , 0 , 0 , 0.3)";
 	touchElement.style.position = 'fixed';
+	if (touchElement.addEventListener) {
+				console.log("added eventListener to touchElement");
+                touchElement.addEventListener("click", closeCustomView, false);
+            } else {
+            	console.log("attached event to touchElement");
+                touchElement.attachEvent('onclick', closeCustomView);
+            }
 	
 	document.body.appendChild(touchElement);
 	touchElement.style.zIndex =  '1000';
