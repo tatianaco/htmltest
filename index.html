@@ -222,6 +222,14 @@ function showView() {
     chooseDiv.appendChild(appleDiv);
     
     
+    var appleP = document.createElement('p');
+    appleP.innerHTML = "Open in Apple Maps";
+    appleP.style.color = 'rgba(10 , 128 , 251 , 1)';
+    appleP.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
+	appleP.style.fontSize = '18px';
+	appleDiv.appendChild(appleP);
+    
+    
     
 	
 	var googleDiv = document.createElement('div');
@@ -235,6 +243,13 @@ function showView() {
     googleDiv.style.strokeWidth = '1px';
     
 	chooseDiv.appendChild(googleDiv);
+	
+	var googleP = document.createElement('p');
+    googleP.innerHTML = "Open in Google Maps";
+    googleP.style.color = 'rgba(10 , 128 , 251 , 1)';
+    googleP.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
+	googleP.style.fontSize = '18px';
+	googleDiv.appendChild(googleP);
     
     
     var wazeDiv = document.createElement('div');
@@ -254,6 +269,13 @@ function showView() {
 	wazeDiv.style["border-radius"] = "0 0 10px 10px";
     chooseDiv.appendChild(wazeDiv);
     
+    var wazeP = document.createElement('p');
+    wazeP.innerHTML = "Open in Waze";
+    wazeP.style.color = 'rgba(10 , 128 , 251 , 1)';
+    wazeP.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
+	wazeP.style.fontSize = '18px';
+	wazeDiv.appendChild(wazeP);
+    
     
     var cancelDiv = document.createElement('div');
 	cancelDiv.style.width = '90%';
@@ -268,16 +290,20 @@ function showView() {
 	cancelDiv.style.position = 'absolute';
 	cancelDiv.style.bottom = "0";
 	cancelDiv.style.backgroundColor = "#B3CC99";
+	cancelDiv.textAlign = "center";
 	cancelDiv.style.stroke = "#CCCCCC";
     cancelDiv.style.strokeWidth = '1px';
+    cancelDiv.style.verticalAlign = "middle";
     newElement.appendChild(cancelDiv);
     
+    var cancelP = document.createElement('p');
+    cancelP.innerHTML = "Cancel";
+    cancelP.style.color = 'rgba(10 , 128 , 251 , 1)';
+    cancelP.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
+	cancelP.style.fontSize = '18px';
+	cancelDiv.appendChild(cancelP);
     
-    
-    
-	
 
-	
 	/*
 	var innerDiv = document.createElement('div');
 	innerDiv.style.backgroundColor = '#cedd05';
