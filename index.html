@@ -218,8 +218,9 @@ function showView() {
 	appleDiv.style.flex = '1';
 	appleDiv.style['-webkit-flex'] = '1';
 	appleDiv.style.backgroundColor = "#fff";
-	appleDiv.style.stroke = "#CCCCCC";
-    appleDiv.style.strokeWidth = '1px';
+	appleDiv.style.borderWidth = "1px";
+	appleDiv.style.borderColor = "#AAAAAA";
+	appleDiv.style.borderStyle = "solid";
     chooseDiv.appendChild(appleDiv);
     
     
@@ -239,9 +240,11 @@ function showView() {
 	googleDiv.style.flex = '1';
 	googleDiv.style['-webkit-flex'] = '1';
 	googleDiv.style.backgroundColor = "#fff";
-	googleDiv.style.stroke = "#088da5";
+	googleDiv.style.borderWidth = "1px";
+	googleDiv.style.borderColor = "#AAAAAA";
+	googleDiv.style.borderStyle = "solid";
 	googleDiv.style.height = "50px";
-    googleDiv.style.strokeWidth = '1px';
+    
     
 	chooseDiv.appendChild(googleDiv);
 	
@@ -259,15 +262,17 @@ function showView() {
 	wazeDiv.style.flex = '1';
 	wazeDiv.style['-webkit-flex'] = '1';
 	wazeDiv.style.backgroundColor = "#fff";
-	wazeDiv.style.stroke = "#088da5";
 	wazeDiv.style.height = "50px";
-    wazeDiv.style.strokeWidth = '1px';
+	
     wazeDiv.style["-moz-border-radius"] = "0 0 10px 10px";
 	wazeDiv.style["-webkit-border-radius"] = "0 0 10px 10px";
 	wazeDiv.style["-ms-border-radius"] = "0 0 10px 10px";
 	wazeDiv.style["-o-border-radius"] = "0 0 10px 10px";
 	wazeDiv.style["-khtml-border-radius"] = "0 0 10px 10px";
 	wazeDiv.style["border-radius"] = "0 0 10px 10px";
+	wazeDiv.style.borderWidth = "1px";
+	wazeDiv.style.borderColor = "#AAAAAA";
+	wazeDiv.style.borderStyle = "solid";
     chooseDiv.appendChild(wazeDiv);
     
     var wazeP = document.createElement('p');
@@ -293,6 +298,9 @@ function showView() {
 	cancelDiv.style.backgroundColor = "#fff";
 	cancelDiv.textAlign = "center";
 	cancelDiv.style.stroke = "#CCCCCC";
+	cancelDiv.style.borderWidth = "2px";
+	cancelDiv.style.borderColor = "#AAAAAA";
+	cancelDiv.style.borderStyle = "solid";
     cancelDiv.style.strokeWidth = '1px';
     cancelDiv.style.verticalAlign = "middle";
     newElement.appendChild(cancelDiv);
