@@ -170,7 +170,7 @@ function showView() {
 	newElement.style.textAlign = "center"; 
 
 	newElement.style.width = "100%";
-	newElement.style.height = '250px';
+	newElement.style.height = '320px';
 	newElement.style.bottom = "0";
 	newElement.style.position = 'absolute';
 	newElement.style.backgroundColor = 'transparent';
@@ -181,26 +181,14 @@ function showView() {
 	touchElement.appendChild(newElement);
 	
 	var chooseDiv = document.createElement('div');
-	chooseDiv.style.height = '150px';
-	chooseDiv.style.marginTop = "20px";
+	chooseDiv.style.height = '220px';
+	//chooseDiv.style.marginTop = "20px";
 	chooseDiv.style.width = '95%';
 	chooseDiv.style.overflow = "hidden";
 	chooseDiv.style.backgroundColor = "transparent";
-	/*
-	-webkit-border-radius: 10px;
-	 -moz-border-radius: 10px;
-	 -o-border-radius: 10px;
-	 -ms-border-radius: 10px;
-	 -khtml-border-radius: 10px;
-	 border-radius: 10px;
-	*/
+
 	var cornerRadius = '10px';
-	//chooseDiv.style["-webkit-border-radius"] = cornerRadius;
-	//chooseDiv.style["-moz-border-radius"] = cornerRadius;
-	//chooseDiv.style["-o-border-radius"] = cornerRadius;
-	//chooseDiv.style["-ms-border-radius"] = cornerRadius;
-	//chooseDiv.style["-khtml-border-radius"] = cornerRadius;
-	//chooseDiv.style["border-radius"] = cornerRadius;
+	
 	chooseDiv.style.display = "inline-block";
 	newElement.appendChild(chooseDiv);
 	
@@ -214,12 +202,12 @@ function showView() {
 	appleDiv.style["-khtml-border-radius"] = "10px 10px 0 0";
 	appleDiv.style["border-radius"] = "10px 10px 0 0";
 	appleDiv.style.display = 'block';
-	appleDiv.style.height = "50px";
+	appleDiv.style.height = "70px";
 	appleDiv.style.flex = '1';
 	appleDiv.style['-webkit-flex'] = '1';
 	appleDiv.style.backgroundColor = "#fff";
 	appleDiv.style.borderWidth = "1px";
-	appleDiv.style.borderColor = "#AAAAAA";
+	appleDiv.style.borderColor = "#ccc";
 	appleDiv.style.borderStyle = "solid";
     chooseDiv.appendChild(appleDiv);
     
@@ -241,9 +229,9 @@ function showView() {
 	googleDiv.style['-webkit-flex'] = '1';
 	googleDiv.style.backgroundColor = "#fff";
 	googleDiv.style.borderWidth = "1px";
-	googleDiv.style.borderColor = "#AAAAAA";
+	googleDiv.style.borderColor = "#ccc";
 	googleDiv.style.borderStyle = "solid";
-	googleDiv.style.height = "50px";
+	googleDiv.style.height = "70px";
     
     
 	chooseDiv.appendChild(googleDiv);
@@ -262,7 +250,7 @@ function showView() {
 	wazeDiv.style.flex = '1';
 	wazeDiv.style['-webkit-flex'] = '1';
 	wazeDiv.style.backgroundColor = "#fff";
-	wazeDiv.style.height = "50px";
+	wazeDiv.style.height = "70px";
 	
     wazeDiv.style["-moz-border-radius"] = "0 0 10px 10px";
 	wazeDiv.style["-webkit-border-radius"] = "0 0 10px 10px";
@@ -271,7 +259,7 @@ function showView() {
 	wazeDiv.style["-khtml-border-radius"] = "0 0 10px 10px";
 	wazeDiv.style["border-radius"] = "0 0 10px 10px";
 	wazeDiv.style.borderWidth = "1px";
-	wazeDiv.style.borderColor = "#AAAAAA";
+	wazeDiv.style.borderColor = "#ccc";
 	wazeDiv.style.borderStyle = "solid";
     chooseDiv.appendChild(wazeDiv);
     
@@ -292,14 +280,13 @@ function showView() {
 	cancelDiv.style["-khtml-border-radius"] ="10px 10px 10px 10px";
 	cancelDiv.style["border-radius"] = "10px 10px 10px 10px";
 	cancelDiv.style.display = 'block';
-	cancelDiv.style.height = "50px";
+	cancelDiv.style.height = "70px";
 	cancelDiv.style.position = 'absolute';
 	cancelDiv.style.bottom = "20px";
 	cancelDiv.style.backgroundColor = "#fff";
 	cancelDiv.textAlign = "center";
-	cancelDiv.style.stroke = "#CCCCCC";
 	cancelDiv.style.borderWidth = "2px";
-	cancelDiv.style.borderColor = "#AAAAAA";
+	cancelDiv.style.borderColor = "#ccc";
 	cancelDiv.style.borderStyle = "solid";
     cancelDiv.style.strokeWidth = '1px';
     cancelDiv.style.verticalAlign = "middle";
