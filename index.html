@@ -173,7 +173,7 @@ function showView() {
 	newElement.style.height = '250px';
 	newElement.style.bottom = "0";
 	newElement.style.position = 'absolute';
-	newElement.style.backgroundColor = '#e4ddd7';
+	newElement.style.backgroundColor = 'transparent';
 	newElement.style.paddingLeft = '20px';
 	newElement.style.paddingRight = '20px';
 	newElement.style.display = 'inline-block';
@@ -182,8 +182,10 @@ function showView() {
 	
 	var chooseDiv = document.createElement('div');
 	chooseDiv.style.height = '150px';
+	chooseDiv.style.marginTop = "20px";
 	chooseDiv.style.width = '95%';
 	chooseDiv.style.overflow = "hidden";
+	chooseDiv.style.backgroundColor = "transparent";
 	/*
 	-webkit-border-radius: 10px;
 	 -moz-border-radius: 10px;
@@ -199,7 +201,6 @@ function showView() {
 	//chooseDiv.style["-ms-border-radius"] = cornerRadius;
 	//chooseDiv.style["-khtml-border-radius"] = cornerRadius;
 	//chooseDiv.style["border-radius"] = cornerRadius;
-	chooseDiv.style.backgroundColor = "#FFFFFF";
 	chooseDiv.style.display = "inline-block";
 	newElement.appendChild(chooseDiv);
 	
@@ -216,7 +217,7 @@ function showView() {
 	appleDiv.style.height = "50px";
 	appleDiv.style.flex = '1';
 	appleDiv.style['-webkit-flex'] = '1';
-	appleDiv.style.backgroundColor = "#B3CC99";
+	appleDiv.style.backgroundColor = "#fff";
 	appleDiv.style.stroke = "#CCCCCC";
     appleDiv.style.strokeWidth = '1px';
     chooseDiv.appendChild(appleDiv);
@@ -237,7 +238,7 @@ function showView() {
 	googleDiv.style.display = 'block';
 	googleDiv.style.flex = '1';
 	googleDiv.style['-webkit-flex'] = '1';
-	googleDiv.style.backgroundColor = "#088da5";
+	googleDiv.style.backgroundColor = "#fff";
 	googleDiv.style.stroke = "#088da5";
 	googleDiv.style.height = "50px";
     googleDiv.style.strokeWidth = '1px';
@@ -257,7 +258,7 @@ function showView() {
 	wazeDiv.style.display = 'block';
 	wazeDiv.style.flex = '1';
 	wazeDiv.style['-webkit-flex'] = '1';
-	wazeDiv.style.backgroundColor = "#e297a3";
+	wazeDiv.style.backgroundColor = "#fff";
 	wazeDiv.style.stroke = "#088da5";
 	wazeDiv.style.height = "50px";
     wazeDiv.style.strokeWidth = '1px';
@@ -288,8 +289,8 @@ function showView() {
 	cancelDiv.style.display = 'block';
 	cancelDiv.style.height = "50px";
 	cancelDiv.style.position = 'absolute';
-	cancelDiv.style.bottom = "0";
-	cancelDiv.style.backgroundColor = "#B3CC99";
+	cancelDiv.style.bottom = "20px";
+	cancelDiv.style.backgroundColor = "#fff";
 	cancelDiv.textAlign = "center";
 	cancelDiv.style.stroke = "#CCCCCC";
     cancelDiv.style.strokeWidth = '1px';
