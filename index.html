@@ -172,7 +172,7 @@ function closeCustomView (event) {
 	}
 	
 	
-	move();
+	
 	
 	
 	console.log("in closeCustomView func");
@@ -183,6 +183,7 @@ function closeCustomView (event) {
 		//target.remove();
 		var eventPhase = event.eventPhase;
 		console.log("onTouchElementClick , eventPhase = " + eventPhase); 
+		move();
 	}
 	else if (target.id == "appleDiv" || target.id == "appleP") {
 		onNavigateApp(event, 2);
@@ -190,9 +191,11 @@ function closeCustomView (event) {
 	
 	else if (target.id == "googleDiv" || target.id == "googleP") {
 		onNavigateApp(event, 1);
+		move();
 	}
 	else if (target.id == "wazeDiv" || target.id == "wazeP"){
 		onNavigateApp(event, 0);
+		move();
 	
 	}
 	
