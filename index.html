@@ -144,12 +144,43 @@ function showPositionYokneam() {
 }
 
 function closeCustomView (event) {
-	console.log("in closeCustomView func");
+	
 	var target = event.target;
+	
+	var newElement = document.getElementById("newElement");
+	function move() {
+
+    var cBottomStr = newElement.style.bottom;
+    console.log("cBottomStr = " + cBottomStr);
+   
+    var cBottom = parseInt( cBottomStr.substr(0, cBottomStr.length - 2) , 10);
+	
+	console.log("cBottom = " + cBottom);
+		
+		
+		if (cBottom > -320) {
+			cBottom -= 10;
+			newElement.style.bottom = cBottom + "px";
+			setTimeout (move, 8);
+		}
+		else {
+			target.remove();
+		}
+		
+	
+		
+	}
+	
+	
+	move();
+	
+	
+	console.log("in closeCustomView func");
 	console.log ("target.id = " + target.id);
+	
 	if (target.id == "touchElement" || target.id == "cancelDiv" || target.id == "cancelP" ) {
 	
-		target.remove();
+		//target.remove();
 		var eventPhase = event.eventPhase;
 		console.log("onTouchElementClick , eventPhase = " + eventPhase); 
 	}
@@ -166,6 +197,37 @@ function closeCustomView (event) {
 	}
 	
 
+}
+
+
+var createCookie = function(name, value, days) {
+    var expires;
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    }
+    else {
+        expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+
+
+function getCookie(c_name) {
+    if (document.cookie.length > 0) {
+        c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1) {
+            c_start = c_start + c_name.length + 1;
+            c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) {
+                c_end = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(c_start, c_end));
+        }
+    }
+    return "";
 }
 
 
@@ -197,11 +259,12 @@ function showView(event) {
 
 	newElement.style.width = "100%";
 	newElement.style.height = '320px';
-	newElement.style.bottom = "0";
+	newElement.style.bottom = "-320px";
 	newElement.style.position = 'absolute';
 	newElement.style.backgroundColor = 'transparent';
 	newElement.style.paddingLeft = '20px';
 	newElement.style.paddingRight = '20px';
+	newElement.id = "newElement";
 	newElement.style.display = 'inline-block';
 	newElement.style.textAlign = 'center';
 	touchElement.appendChild(newElement);
@@ -343,7 +406,34 @@ function showView(event) {
 	cancelDiv.appendChild(cancelP);
 	
 	
+    function move() {
+
+    var cBottomStr = newElement.style.bottom;
+    console.log("cBottomStr = " + cBottomStr);
+   
+    var cBottom = parseInt( cBottomStr.substr(0, cBottomStr.length - 2) , 10);
+	
+	console.log("cBottom = " + cBottom);
+		
+		
+		if (cBottom < 0) {
+			cBottom += 10;
+			newElement.style.bottom = cBottom + "px";
+			setTimeout (move, 8);
+		}
+		
+	
+		
+	}
+	
+	
+	move();
+  
     
+    
+       //-moz-transition: left .2s;
+         //-o-transition: left .2s;
+           // transition: left .2s;
 
 	/*
 	var innerDiv = document.createElement('div');
