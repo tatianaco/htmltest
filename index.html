@@ -85,23 +85,27 @@ function onNavigateApp(event , mode ) {
 	var dkm;
 	dkm= geo_sites[ i ] [ 10 ] ;
 	console.log("in navigate func");
+	console.log("mode = " + mode);
 	
-	if ( dkm >1000)
+	alert ("mode = " + mode + " , dkm = " + dkm);
+	if ( dkm >1000) {
 		console.log("case dkm > 1000");
-		nv_selected=1;
-
-	if ( mode ==0 )
+		mode = 1;
+	}
+	if ( mode == 0 ) {
 		console.log("case nv_selected ==0");
 		location = "waze://?ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&navigate=yes";
+		console.log("location = " + location); 
 
-	
-	if ( mode ==1 ) 
+	}
+	else if ( mode == 1 )  {
 		console.log("case nv_selected == 1");
 		location = "http://maps.google.com/?q=Mellanox&ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&z=17&navigate=yes" ;
-
-	if ( mode ==2 ) 
+	}
+	else if ( mode == 2 ) {
 		console.log("case nv_selected == 2");
 		location = "http://maps.apple.com/?q=Mellanox&ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&z=17&navigate=yes" ;
+	}
 }
 
 
