@@ -65,10 +65,22 @@
 	nv_apps[ 2 ] = [ 'Apple<BR>Maps', '#e9F1FD', '#D9D1BD', '#3298FF' ];
 	
 
-function navigate( event){
-	showView();
+function navigate( event , nv_selected){
 
-/*
+	if ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0) {
+		showView(event);
+
+	}
+	 else if (navigator.userAgent.indexOf("Android") > 0  ) {
+		onNavigateApp(event , nv_selected);
+	}
+	else {
+		showView(event);
+	}
+}
+
+
+function onNavigateApp(event , mode ) {
 	var i = event.target.tag;
 	var dkm;
 	dkm= geo_sites[ i ] [ 10 ] ;
@@ -78,20 +90,18 @@ function navigate( event){
 		console.log("case dkm > 1000");
 		nv_selected=1;
 
-	if ( nv_selected ==0 )
+	if ( mode ==0 )
 		console.log("case nv_selected ==0");
 		location = "waze://?ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&navigate=yes";
 
 	
-	if ( nv_selected ==1 ) 
+	if ( mode ==1 ) 
 		console.log("case nv_selected == 1");
 		location = "http://maps.google.com/?q=Mellanox&ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&z=17&navigate=yes" ;
 
-	if ( nv_selected ==2 ) 
+	if ( mode ==2 ) 
 		console.log("case nv_selected == 2");
 		location = "http://maps.apple.com/?q=Mellanox&ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&z=17&navigate=yes" ;
-
-	*/		
 }
 
 
@@ -132,20 +142,32 @@ function showPositionYokneam() {
 function closeCustomView (event) {
 	console.log("in closeCustomView func");
 	var target = event.target;
-	
-	if (target.id == "touchElement") {
+	console.log ("target.id = " + target.id);
+	if (target.id == "touchElement" || target.id == "cancelDiv" || target.id == "cancelP" ) {
 	
 		target.remove();
 		var eventPhase = event.eventPhase;
 		console.log("onTouchElementClick , eventPhase = " + eventPhase); 
+	}
+	else if (target.id == "appleDiv" || target.id == "appleP") {
+		onNavigateApp(event, 2);
+	}
+	
+	else if (target.id == "googleDiv" || target.id == "googleP") {
+		onNavigateApp(event, 1);
+	}
+	else if (target.id == "wazeDiv" || target.id == "wazeP"){
+		onNavigateApp(event, 0);
+	
 	}
 	
 
 }
 
 
-function showView() {
+function showView(event) {
 
+	var tag = event.target.tag;
 	var touchElement = document.createElement('div');
 	touchElement.style.width = "100%";
 	touchElement.style.height = "100vh";
@@ -207,8 +229,11 @@ function showView() {
 	appleDiv.style['-webkit-flex'] = '1';
 	appleDiv.style.backgroundColor = "#fff";
 	appleDiv.style.borderWidth = "1px";
+	appleDiv.tag = event.target.tag;
 	appleDiv.style.borderColor = "#ccc";
 	appleDiv.style.borderStyle = "solid";
+	appleDiv.id = "appleDiv";
+	appleDiv.tag = tag;
     chooseDiv.appendChild(appleDiv);
     
     
@@ -217,6 +242,8 @@ function showView() {
     appleP.style.color = 'rgba(10 , 128 , 251 , 1)';
     appleP.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
 	appleP.style.fontSize = '18px';
+	appleP.tag = tag;
+	appleP.id = "appleP";
 	appleDiv.appendChild(appleP);
     
     
@@ -232,6 +259,8 @@ function showView() {
 	googleDiv.style.borderColor = "#ccc";
 	googleDiv.style.borderStyle = "solid";
 	googleDiv.style.height = "70px";
+	googleDiv.id = "googleDiv";
+	googleDiv.tag = tag;
     
     
 	chooseDiv.appendChild(googleDiv);
@@ -241,6 +270,8 @@ function showView() {
     googleP.style.color = 'rgba(10 , 128 , 251 , 1)';
     googleP.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
 	googleP.style.fontSize = '18px';
+	googleP.id = "googleP";
+	googleP.tag = tag;
 	googleDiv.appendChild(googleP);
     
     
@@ -250,6 +281,7 @@ function showView() {
 	wazeDiv.style.flex = '1';
 	wazeDiv.style['-webkit-flex'] = '1';
 	wazeDiv.style.backgroundColor = "#fff";
+	wazeDiv.tag = tag;
 	wazeDiv.style.height = "70px";
 	
     wazeDiv.style["-moz-border-radius"] = "0 0 10px 10px";
@@ -261,6 +293,7 @@ function showView() {
 	wazeDiv.style.borderWidth = "1px";
 	wazeDiv.style.borderColor = "#ccc";
 	wazeDiv.style.borderStyle = "solid";
+	wazeDiv.id = "wazeDiv";
     chooseDiv.appendChild(wazeDiv);
     
     var wazeP = document.createElement('p');
@@ -268,6 +301,8 @@ function showView() {
     wazeP.style.color = 'rgba(10 , 128 , 251 , 1)';
     wazeP.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
 	wazeP.style.fontSize = '18px';
+	wazeP.id = "wazeP";
+	wazeP.tag = tag;
 	wazeDiv.appendChild(wazeP);
     
     
@@ -290,14 +325,20 @@ function showView() {
 	cancelDiv.style.borderStyle = "solid";
     cancelDiv.style.strokeWidth = '1px';
     cancelDiv.style.verticalAlign = "middle";
+    cancelDiv.tag = 3;
+    cancelDiv.id = "cancelDiv";
     newElement.appendChild(cancelDiv);
+    
     
     var cancelP = document.createElement('p');
     cancelP.innerHTML = "Cancel";
     cancelP.style.color = 'rgba(10 , 128 , 251 , 1)';
     cancelP.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
 	cancelP.style.fontSize = '18px';
+	cancelP.id = "cancelP";
 	cancelDiv.appendChild(cancelP);
+	
+	
     
 
 	/*
@@ -448,8 +489,6 @@ function showView() {
 	
 	
 	console.log("we are here");
-	
-	
 
 }
 
@@ -818,7 +857,6 @@ function onCityClick (event) {
 function createAppChooseView () {
 	var newElement =  document.createElement('div');
 	newElement.style.textAlign = "center"; 
-	
 }
 
 
