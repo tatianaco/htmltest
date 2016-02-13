@@ -67,7 +67,11 @@
 
 function navigate( event , nv_selected){
 
+
+	var cookie = getCookie("iosNavigationChoosen");
+		console.log("cookie = " + cookie);
 	if ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0) {
+		
 		showView(event);
 
 	}
@@ -86,6 +90,11 @@ function onNavigateApp(event , mode ) {
 	dkm= geo_sites[ i ] [ 10 ] ;
 	console.log("in navigate func");
 	console.log("mode = " + mode);
+	
+	//if ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0) {
+		createCookie("iosNavigationChoosen" , mode , 90);
+		console.log("cookie is saved");
+	//}
 	
 	alert ("mode = " + mode + " , dkm = " + dkm);
 	if ( dkm >1000) {
@@ -151,11 +160,10 @@ function closeCustomView (event) {
 	function move() {
 
     var cBottomStr = newElement.style.bottom;
-    console.log("cBottomStr = " + cBottomStr);
-   
+    
     var cBottom = parseInt( cBottomStr.substr(0, cBottomStr.length - 2) , 10);
 	
-	console.log("cBottom = " + cBottom);
+	
 		
 		
 		if (cBottom > -320) {
@@ -170,9 +178,6 @@ function closeCustomView (event) {
 	
 		
 	}
-	
-	
-	
 	
 	
 	console.log("in closeCustomView func");
@@ -213,7 +218,10 @@ var createCookie = function(name, value, days) {
     else {
         expires = "";
     }
+    var str =  name + "=" + value + expires + "; path=/";
+    console.log("str = " + str);
     document.cookie = name + "=" + value + expires + "; path=/";
+    console.log("document.cookie = " + document.cookie);
 }
 
 
@@ -412,11 +420,9 @@ function showView(event) {
     function move() {
 
     var cBottomStr = newElement.style.bottom;
-    console.log("cBottomStr = " + cBottomStr);
    
     var cBottom = parseInt( cBottomStr.substr(0, cBottomStr.length - 2) , 10);
 	
-	console.log("cBottom = " + cBottom);
 		
 		
 		if (cBottom < 0) {
