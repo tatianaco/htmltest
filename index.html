@@ -115,7 +115,7 @@ function onNavigateApp(event , mode ) {
 				console.log("case nv_selected ==0");
 				document.location = "waze://?ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&navigate=yes";
 				console.log("location = " + location); 
-				}, 25);
+				}, 500);
 				alert("Ooops... no waze installed :(");
 
 		}
