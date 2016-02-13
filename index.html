@@ -726,20 +726,7 @@ function nv_sites_draw(){
 					button.style.borderColor = 'rgba(101, 97, 100, 0.97)';
 					button.style.color = 'rgba(101, 97, 100, 0.97)';
 					
-					/*
-					var imageAirplane = document.createElement('img');
-					imageAirplane.src = "images/airplane.png";
-					imageAirplane.style.height = '25px';
-					button.appendChild(imageAirplane);
-					*/
-				
-					/*
-					var spanElement = document.createElement('span');
-					//glyphicon glyphicon glyphicon-plane
-					spanElement.classList.add('glyphicon')
-					spanElement.classList.add('glyphicon-plane');
-					button.appendChild(spanElement);
-					*/
+		
 				}
 				var image = document.createElement('img');
 				var name = geo_sites[ i ][4];
@@ -755,8 +742,6 @@ function nv_sites_draw(){
 				image.style.left = '30px';
 				
 				newElement.appendChild(button);
-				// btn-info btn-lg btn-block');
-				 //newElement.innerHTML += "<button type=button onClick='navigate( "+ i + " )' class='btn btn-info btn-lg btn-block' " + ( dkm > 1000 ? "style='background-color:rgba(218, 214, 217, 0.97); border-color:rgba(101, 97, 100, 0.97); color:rgba(101, 97, 100, 0.97);'" : '' )  +  "  >" + geo_sites[i][0] + " " + ( dkm > 1000 ? "<span class='glyphicon glyphicon glyphicon-plane' aria-hidden=true></span>" : "" ) + "" + "</button>"; -->
 			}
 			else  {
 				console.log("no parent, dkm = 0, airplain "  );
@@ -777,7 +762,6 @@ function nv_sites_draw(){
 				image.style.position = 'absolute';
 				button.appendChild(image);
 				image.style.left = '50px';
-				//newElement.innerHTML  += "<button type=button onClick='navigate( "+ i + " )' class='btn btn-info btn-lg btn-block'>" + geo_sites[i][0] + "</button>";
 			}
 			document.getElementById( "geo_buttons").appendChild(newElement);
 		}
@@ -802,48 +786,14 @@ function nv_sites_draw(){
 				button.innerHTML = cities[currParentPtr][0];
 				
 				
-				/*
-				var span = document.createElement('span')
-				span.style.height = '25px';
-				span.style.width = '25px';
-				span.style.backgroundColor = '#FFFFFF';
-				span.style.position = 'absolute';
-				span.style.right = '65px';
-				span.style.color = 'rgba(52 , 152 , 219 , 0.97)'; 
-				//span.style.top = '10px';
-				button.appendChild(span);
-				*/
-				
-				/*
-				var arr = getGeoSitesForCityIndex(currParentPtr);
-				
-				span.innerHTML = arr.length;
-				span.style['-webkit-border-radius'] = '12.5px';
-				span.style['-moz-border-radius'] = '12.5px';
-				span.style.borderRadius = '12.5px';
-				*/
+			
 				
 				if (dkm > 1000) {
 					button.style.backgroundColor = 'rgba(218, 214, 217, 0.97)';
 					button.style.borderColor = 'rgba(101, 97, 100, 0.97)';
 					button.style.color = 'rgba(101, 97, 100, 0.97)';
 				
-					/*
-					var imageAirplane = document.createElement('img');
-					imageAirplane.src = "images/airplane.png";
-					imageAirplane.style.height = '25px';
-					button.appendChild(imageAirplane);
-					*/
-					
-					
-					
-					/*
-					var spanElement = document.createElement('span');
-					//glyphicon glyphicon glyphicon-plane
-					spanElement.classList.add('glyphicon')
-					spanElement.classList.add('glyphicon-plane');
-					button.appendChild(spanElement);
-					*/
+				
 				}
 				var image = document.createElement('img');
 				var name = geo_sites[ i ][4];
@@ -866,20 +816,14 @@ function nv_sites_draw(){
 				imageDown.style.right = '30px';
 				button.appendChild(imageDown);
 				
-				
-				//-webkit-border-radius: 25px;
-      			//-moz-border-radius: 25px;
-      			//border-radius: 25px;
+		
 				
 				
 				
-				
-				//document.getElementById( "geo_buttons").innerHTML += "<button type=button  id=city_"+ currParentPtr + " onClick='onCityClick( "+ currParentPtr + " )' class='btn btn-info btn-lg btn-block' " + ( dkm > 1000 ? "style='background-color:rgba(218, 214, 217, 0.97); border-color:rgba(101, 97, 100, 0.97); color:rgba(101, 97, 100, 0.97);'" : '' )  +  "  >" + cities[currParentPtr][0] + " " + ( dkm > 1000 ? "<span class='glyphicon glyphicon glyphicon-plane' aria-hidden=true></span>" : "" ) + "" + "</button>";
 			}
 			else {
 				console.log("have parent, same parent as prev ,  dkm =  " + dkm)
 			}
-			//document.getElementById( "geo_buttons").appendChild(newElement);
 		}
 	}
 }
@@ -904,7 +848,11 @@ function getGeoSitesForCityIndex (i) {
 
 function onCityClick (event) {
 	//console.log("onCityClick , aCityindex = " + aCityindex);
+
 	var aCityindex = event.target.tag; 
+	if (!aCityindex) {
+		aCityindex = event.target.parentNode.tag;
+	}
 	//console.log("onCityClick , tag = " + tag);
 	var cityElement = document.getElementById( "city_" + aCityindex );
 	
