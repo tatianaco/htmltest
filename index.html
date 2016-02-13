@@ -1008,11 +1008,12 @@ function nv_apps_draw(){
 	if ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0) {
 		console.log("IPHONE DETECTED")
 		var cookie = getCookie("iosNavigationChoosen");
+		alert ("hi 1");
 		console.log("cookie in nv_apps_draw = " + cookie);
 		if (cookie == null) {
 			console.log("cookie in nv_apps_draw = NULL");
 		}
-		if  (cookie == 0 ) {
+		else if  (cookie == 0 ) {
 			console.log("cookie in nv_apps_draw = 0");
 		}
 		else {
