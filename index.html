@@ -69,7 +69,7 @@ function navigate( event , nv_selected){
 
 
 	var cookie = getCookie("iosNavigationChoosen");
-		console.log("cookie = " + cookie);
+	console.log("cookie = " + cookie);
 	if ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0) {
 		
 		showView(event);
@@ -965,6 +965,10 @@ function createAppChooseView () {
 
 	
 function nv_apps_draw(){
+
+	var cookie = getCookie("iosNavigationChoosen");
+	console.log("cookie in nv_apps_draw = " + cookie);
+
 	if ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0) {
 		console.log("IPHONE DETECTED")
 		for( var i=0 ; i < nv_apps.length; i ++ ){
