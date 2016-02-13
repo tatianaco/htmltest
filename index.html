@@ -16,6 +16,8 @@
 	var nv_lat = 0;
 	var nv_lon = 0;
 	
+	var isNavButtonClicked = false;
+	
 	//var MX = new Array(3).fill(new Array(3).fill(null))
 	
 
@@ -85,34 +87,43 @@ function navigate( event , nv_selected){
 
 
 function onNavigateApp(event , mode ) {
-	var i = event.target.tag;
-	var dkm;
-	dkm= geo_sites[ i ] [ 10 ] ;
-	console.log("in navigate func");
-	console.log("mode = " + mode);
 	
 	//if ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0) {
 		createCookie("iosNavigationChoosen" , mode , 90);
 		console.log("cookie is saved");
 	//}
+	if (isNavButtonClicked == true) {
+		
+		//closeCustomView(event);
+		console.log("it just a navbutton!");
+		isNavButtonClicked = false;
+	}
+	else {
+		console.log("it is click on city!");
+		var i = event.target.tag;
+		var dkm;
+		dkm= geo_sites[ i ] [ 10 ] ;
+		console.log("in navigate func");
+		console.log("mode = " + mode);
 	
-	if ( dkm >1000) {
-		console.log("case dkm > 1000");
-		mode = 1;
-	}
-	if ( mode == 3 ) {
-		console.log("case nv_selected ==0");
-		location = "waze://?ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&navigate=yes";
-		console.log("location = " + location); 
+		if ( dkm >1000) {
+			console.log("case dkm > 1000");
+			mode = 1;
+		}
+		if ( mode == 3 ) {
+			console.log("case nv_selected ==0");
+			location = "waze://?ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&navigate=yes";
+			console.log("location = " + location); 
 
-	}
-	else if ( mode == 1 )  {
-		console.log("case nv_selected == 1");
-		location = "http://maps.google.com/?q=Mellanox&ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&z=17&navigate=yes" ;
-	}
-	else if ( mode == 2 ) {
-		console.log("case nv_selected == 2");
-		location = "http://maps.apple.com/?q=Mellanox&ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&z=17&navigate=yes" ;
+		}
+		else if ( mode == 1 )  {
+			console.log("case nv_selected == 1");
+			location = "http://maps.google.com/?q=Mellanox&ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&z=17&navigate=yes" ;
+		}
+		else if ( mode == 2 ) {
+			console.log("case nv_selected == 2");
+			location = "http://maps.apple.com/?q=Mellanox&ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&z=17&navigate=yes" ;
+		}
 	}
 }
 
@@ -191,6 +202,7 @@ function closeCustomView (event) {
 	}
 	else if (target.id == "appleDiv" || target.id == "appleP") {
 		onNavigateApp(event, 2);
+		move();
 	}
 	
 	else if (target.id == "googleDiv" || target.id == "googleP") {
@@ -965,14 +977,7 @@ function createAppChooseView () {
 	
 function nv_apps_draw(){
 
-	var cookie = getCookie("iosNavigationChoosen");
-	console.log("cookie in nv_apps_draw = " + cookie);
-	if (cookie == null) {
-		console.log("cookie in nv_apps_draw = NULL");
-	}
-	if  (cookie == 0 ) {
-		console.log("cookie in nv_apps_draw = 0");
-	}
+	
 
 	if ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0) {
 		console.log("IPHONE DETECTED")
@@ -993,6 +998,46 @@ function nv_apps_draw(){
 		console.log("WEB SITE DETECTED");
 		showPositionYokneam();
 	}
+	
+	var cookie = getCookie("iosNavigationChoosen");
+	console.log("cookie in nv_apps_draw = " + cookie);
+	if (cookie == null) {
+		console.log("cookie in nv_apps_draw = NULL");
+	}
+	if  (cookie == 0 ) {
+		console.log("cookie in nv_apps_draw = 0");
+	}
+	var nbutton = document.createElement("div");
+	nbutton.style.height = '24px';
+	nbutton.style.textAlign = 'center';
+	nbutton.style.backgroundColor = 'rgba(219, 215 , 218, 1)';
+	//nbutton.style.display="inline-block";
+	nbutton.style.color = 'rgb(107 , 104 , 106)';
+	nbutton.style.width = '100px';
+	nbutton.style.verticalAlign = 'middle';
+	nbutton.style.position = 'absolute';
+	nbutton.style.top = "25px";
+	nbutton.style.right = '30px';
+	nbutton.innerHTML = 'Navigate With';
+	document.body.appendChild(nbutton);
+	nbutton.style.zIndex =  '1000';
+	nbutton.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
+	nbutton.style.fontSize = '14px';
+	nbutton.style["-moz-border-radius"] = "3px";
+	nbutton.style["-webkit-border-radius"] = "3px";
+	nbutton.style["-ms-border-radius"] = "3px";
+	nbutton.style["-o-border-radius"] = "3px";
+	nbutton.style["-khtml-border-radius"] ="3px";
+	nbutton.style["border-radius"] = "3px";
+	nbutton.addEventListener("click", onNavButtonClick, false);
+	
+}
+
+function onNavButtonClick(event) {
+
+	isNavButtonClicked = true;
+	console.log("isNavButtonIsSet to true");
+	showView(event);
 }
 
 
@@ -1052,10 +1097,10 @@ function onLoad() {
 
 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-12" style="padding:10px; " >
   <div class="hpanel hblue">
-	  <div class="panel-heading hbuilt text-center">
+	  <div class="panel-heading hbuilt text-center" id="panel">
 		  <h4 class="font-bold">Drive To Site</h4>
 	  </div>
-	  <div class="panel-body">
+	  <div class="panel-body" id="panel-body" style='display:block;'>
 		  <p class="text-muted text-center" id="div_nav_buttons_label" style="display: none;">
 			  Choose your preferred navigation App
 		  </p>
