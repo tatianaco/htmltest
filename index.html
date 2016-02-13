@@ -287,7 +287,7 @@ function showView(event) {
 	newElement.style.paddingLeft = '20px';
 	newElement.style.paddingRight = '20px';
 	newElement.id = "newElement";
-	newElement.style.display = 'inline-block';
+	newElement.style.display = 'block';
 	newElement.style.textAlign = 'center';
 	touchElement.appendChild(newElement);
 	
@@ -394,29 +394,41 @@ function showView(event) {
 	wazeP.tag = tag;
 	wazeDiv.appendChild(wazeP);
     
+
+	/*
+    var cancelWrapper= document.createElement('div');
+    cancelWrapper.style.backgroundColor = "#00ff00";
+    cancelWrapper.style.height = "70px";
+    cancelWrapper.style.width = '95%';
+	cancelWrapper.style.overflow = "hidden";
+	cancelWrapper.style.display = "inline-block";
+	newElement.appendChild(cancelWrapper);
+	//chooseDiv.style.backgroundColor = "transparent";
+  	*/
     
     var cancelDiv = document.createElement('div');
-	cancelDiv.style.width = '85%';
+	cancelDiv.style.width = '95%';
 	cancelDiv.style["-moz-border-radius"] = "10px 10px 10px 10px";
 	cancelDiv.style["-webkit-border-radius"] = "10px 10px 10px 10px";
 	cancelDiv.style["-ms-border-radius"] = "10px 10px 10px 10px";
 	cancelDiv.style["-o-border-radius"] = "10px 10px 10px 10px";
 	cancelDiv.style["-khtml-border-radius"] ="10px 10px 10px 10px";
 	cancelDiv.style["border-radius"] = "10px 10px 10px 10px";
-	cancelDiv.style.display = 'block';
 	cancelDiv.style.height = "70px";
-	cancelDiv.style.position = 'absolute';
+	//cancelDiv.style.position = 'absolute';
 	cancelDiv.style.bottom = "20px";
 	cancelDiv.style.backgroundColor = "#fff";
-	cancelDiv.textAlign = "center";
+	cancelDiv.style.textAlign = "center";
 	cancelDiv.style.borderWidth = "2px";
 	cancelDiv.style.borderColor = "#ccc";
 	cancelDiv.style.borderStyle = "solid";
     cancelDiv.style.strokeWidth = '1px';
+    cancelDiv.style.display = "inline-block";
     cancelDiv.style.verticalAlign = "middle";
     cancelDiv.tag = 3;
     cancelDiv.id = "cancelDiv";
     newElement.appendChild(cancelDiv);
+    
     
     
     var cancelP = document.createElement('p');
@@ -425,6 +437,7 @@ function showView(event) {
     cancelP.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
 	cancelP.style.fontSize = '18px';
 	cancelP.id = "cancelP";
+	cancelP.style.verticalAlign = 'middle';
 	cancelDiv.appendChild(cancelP);
 	
 	
