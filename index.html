@@ -1079,8 +1079,11 @@ function onLoad() {
 	nv_apps_draw();
 	//nv_sites_draw(); 
 	if (navigator.geolocation) { 
-		console.log("navigator.geolocation detected")
+		alert("navigator.geolocation detected")
 		navigator.geolocation.getCurrentPosition(showPosition)
+	}
+	else {
+		alert("NO navigator.geolocation detected")
 	}
 	/*
 	else {
@@ -1132,9 +1135,11 @@ function onLoad() {
 		
 		  <div data-toggle="buttons" align="center" style="width:100%;" id="geo_apps" style="margin-bottom:15;">
 		  </div>
+		  <!--
 		  <p class="text-muted text-center" style="padding: 0px;" id="p_choose_your_dest_label">
 			  Choose your destination site
 		  </p>
+		  -->
 		
 		  <div id="geo_buttons" stsle="margin:15;">
 		  	
