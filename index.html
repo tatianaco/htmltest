@@ -88,10 +88,14 @@ function navigate( event , nv_selected){
 
 function onNavigateApp(event , mode ) {
 	
-	//if ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0) {
+	if ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0) {
 		createCookie("iosNavigationChoosen" , mode , 90);
 		console.log("cookie is saved");
-	//}
+		var navButton = document.getElementById("navbutton");
+		if (navButton) {
+			navButton.remove();
+		}
+	}
 	if (isNavButtonClicked == true) {
 		
 		//closeCustomView(event);
@@ -340,7 +344,6 @@ function showView(event) {
 	appleP.tag = tag;
 	appleP.id = "appleP";
 	appleDiv.appendChild(appleP);
-    
     
     
 	
@@ -629,7 +632,6 @@ function showView(event) {
 	console.log("we are here");
 
 }
-
 
 
 
@@ -1005,13 +1007,41 @@ function nv_apps_draw(){
 
 	if ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0) {
 		console.log("IPHONE DETECTED")
-		/*
-		for( var i=0 ; i < nv_apps.length; i ++ ){
-		document.getElementById( "geo_apps").innerHTML += "<button type=button id=nv_but_" + i + " style='width: 32.4%' onClick='nv_select(" + i + ");btnSelected(this.id);' class='btn btn-primary'>" + nv_apps[i][ 0 ] + "</button> ";
-
+		var cookie = getCookie("iosNavigationChoosen");
+		console.log("cookie in nv_apps_draw = " + cookie);
+		if (cookie == null) {
+			console.log("cookie in nv_apps_draw = NULL");
 		}
-		*/
-		//nv_select( 1 );
+		if  (cookie == 0 ) {
+			console.log("cookie in nv_apps_draw = 0");
+		}
+		else {
+			var nbutton = document.createElement("div");
+			nbutton.style.height = '24px';
+			nbutton.style.textAlign = 'center';
+			nbutton.style.backgroundColor = 'rgba(219, 215 , 218, 1)';
+			//nbutton.style.display="inline-block";
+			nbutton.style.color = 'rgb(107 , 104 , 106)';
+			nbutton.style.width = '100px';
+			nbutton.style.verticalAlign = 'middle';
+			nvbutton.id = "navbutton";
+			nbutton.style.position = 'absolute';
+			nbutton.style.top = "25px";
+			nbutton.style.right = '30px';
+			nbutton.innerHTML = 'Navigate With';
+			document.body.appendChild(nbutton);
+			nbutton.style.zIndex =  '1000';
+			nbutton.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
+			nbutton.style.fontSize = '14px';
+			nbutton.style["-moz-border-radius"] = "3px";
+			nbutton.style["-webkit-border-radius"] = "3px";
+			nbutton.style["-ms-border-radius"] = "3px";
+			nbutton.style["-o-border-radius"] = "3px";
+			nbutton.style["-khtml-border-radius"] ="3px";
+			nbutton.style["border-radius"] = "3px";
+			nbutton.addEventListener("click", onNavButtonClick, false);
+		}
+		
 		
 	} else if (navigator.userAgent.indexOf("Android") > 0  ) {
 		console.log("ANDROID DETECTED")
@@ -1023,37 +1053,7 @@ function nv_apps_draw(){
 		showPositionYokneam();
 	}
 	
-	var cookie = getCookie("iosNavigationChoosen");
-	console.log("cookie in nv_apps_draw = " + cookie);
-	if (cookie == null) {
-		console.log("cookie in nv_apps_draw = NULL");
-	}
-	if  (cookie == 0 ) {
-		console.log("cookie in nv_apps_draw = 0");
-	}
-	var nbutton = document.createElement("div");
-	nbutton.style.height = '24px';
-	nbutton.style.textAlign = 'center';
-	nbutton.style.backgroundColor = 'rgba(219, 215 , 218, 1)';
-	//nbutton.style.display="inline-block";
-	nbutton.style.color = 'rgb(107 , 104 , 106)';
-	nbutton.style.width = '100px';
-	nbutton.style.verticalAlign = 'middle';
-	nbutton.style.position = 'absolute';
-	nbutton.style.top = "25px";
-	nbutton.style.right = '30px';
-	nbutton.innerHTML = 'Navigate With';
-	document.body.appendChild(nbutton);
-	nbutton.style.zIndex =  '1000';
-	nbutton.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
-	nbutton.style.fontSize = '14px';
-	nbutton.style["-moz-border-radius"] = "3px";
-	nbutton.style["-webkit-border-radius"] = "3px";
-	nbutton.style["-ms-border-radius"] = "3px";
-	nbutton.style["-o-border-radius"] = "3px";
-	nbutton.style["-khtml-border-radius"] ="3px";
-	nbutton.style["border-radius"] = "3px";
-	nbutton.addEventListener("click", onNavButtonClick, false);
+	
 	
 }
 
@@ -1125,14 +1125,17 @@ function onLoad() {
 		  <h4 class="font-bold">Drive To Site</h4>
 	  </div>
 	  <div class="panel-body" id="panel-body" style='display:block;'>
+	  	<!--
 		  <p class="text-muted text-center" id="div_nav_buttons_label" style="display: none;">
 			  Choose your preferred navigation App
 		  </p>
+		
 		  <div data-toggle="buttons" align="center" style="width:100%;" id="geo_apps" style="margin-bottom:15;">
 		  </div>
 		  <p class="text-muted text-center" style="padding: 0px;" id="p_choose_your_dest_label">
 			  Choose your destination site
 		  </p>
+		  -->
 		  <div id="geo_buttons" stsle="margin:15;">
 		  	
 		  </div>
