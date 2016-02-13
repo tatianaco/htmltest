@@ -96,12 +96,11 @@ function onNavigateApp(event , mode ) {
 		console.log("cookie is saved");
 	//}
 	
-	alert ("mode = " + mode + " , dkm = " + dkm);
 	if ( dkm >1000) {
 		console.log("case dkm > 1000");
 		mode = 1;
 	}
-	if ( mode == 0 ) {
+	if ( mode == 3 ) {
 		console.log("case nv_selected ==0");
 		location = "waze://?ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&navigate=yes";
 		console.log("location = " + location); 
@@ -199,7 +198,7 @@ function closeCustomView (event) {
 		move();
 	}
 	else if (target.id == "wazeDiv" || target.id == "wazeP"){
-		onNavigateApp(event, 0);
+		onNavigateApp(event, 3);
 		move();
 	
 	}
@@ -977,11 +976,14 @@ function nv_apps_draw(){
 
 	if ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0) {
 		console.log("IPHONE DETECTED")
+		/*
 		for( var i=0 ; i < nv_apps.length; i ++ ){
 		document.getElementById( "geo_apps").innerHTML += "<button type=button id=nv_but_" + i + " style='width: 32.4%' onClick='nv_select(" + i + ");btnSelected(this.id);' class='btn btn-primary'>" + nv_apps[i][ 0 ] + "</button> ";
 
 		}
-		nv_select( 1 );
+		*/
+		//nv_select( 1 );
+		
 	} else if (navigator.userAgent.indexOf("Android") > 0  ) {
 		console.log("ANDROID DETECTED")
 		document.getElementById('div_nav_buttons_label').style.display = 'none';
