@@ -70,11 +70,16 @@
 function navigate( event , nv_selected){
 
 
-	var cookie = getCookie("iosNavigationChoosen");
-	console.log("cookie = " + cookie);
+	
 	if ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0) {
-		
-		showView(event);
+		var cookie = getCookie("iosNavigationChoosen");
+		console.log("cookie = " + cookie);
+		if (!cookie) {
+			showView(event);
+		}
+		else {
+			onNavigateApp(event , cookie);
+		}
 
 	}
 	 else if (navigator.userAgent.indexOf("Android") > 0  ) {
@@ -91,10 +96,7 @@ function onNavigateApp(event , mode ) {
 	if ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0) {
 		createCookie("iosNavigationChoosen" , mode , 90);
 		console.log("cookie is saved");
-		var navButton = document.getElementById("navbutton");
-		if (navButton) {
-			navButton.remove();
-		}
+	
 	}
 	if (isNavButtonClicked == true) {
 		
