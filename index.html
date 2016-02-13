@@ -96,6 +96,33 @@ function onNavigateApp(event , mode ) {
 	if ( navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0) {
 		createCookie("iosNavigationChoosen" , mode , 90);
 		console.log("cookie is saved");
+		var nbutton = document.getElementById("navbutton");
+		if (!nbutton) {
+			nbutton = document.createElement("div");
+			nbutton.style.height = '24px';
+			nbutton.style.textAlign = 'center';
+			nbutton.style.backgroundColor = 'rgba(219, 215 , 218, 1)';
+			//nbutton.style.display="inline-block";
+			nbutton.style.color = 'rgba(107 , 104 , 106 , 1)';
+			nbutton.style.width = '100px';
+			nbutton.style.verticalAlign = 'middle';
+			nbutton.id = "navbutton";
+			nbutton.style.position = 'absolute';
+			nbutton.style.top = "25px";
+			nbutton.style.right = '30px';
+			nbutton.innerHTML = 'Navigate With';
+			document.body.appendChild(nbutton);
+			nbutton.style.zIndex =  '1000';
+			nbutton.style.fontFamily = "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'";
+			nbutton.style.fontSize = '14px';
+			nbutton.style["-moz-border-radius"] = "3px";
+			nbutton.style["-webkit-border-radius"] = "3px";
+			nbutton.style["-ms-border-radius"] = "3px";
+			nbutton.style["-o-border-radius"] = "3px";
+			nbutton.style["-khtml-border-radius"] ="3px";
+			nbutton.style["border-radius"] = "3px";
+			nbutton.addEventListener("click", onNavButtonClick, false);
+		}
 	
 	}
 	if (isNavButtonClicked == true) {
