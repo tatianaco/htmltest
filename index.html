@@ -1042,7 +1042,6 @@ function nv_apps_draw(){
 			nbutton.style["-khtml-border-radius"] ="3px";
 			nbutton.style["border-radius"] = "3px";
 			nbutton.addEventListener("click", onNavButtonClick, false);
-			alert("button is built");
 		}
 		
 		
@@ -1082,11 +1081,9 @@ function onLoad() {
 	nv_apps_draw();
 	//nv_sites_draw(); 
 	if (navigator.geolocation) { 
-		alert("navigator.geolocation detected")
 		navigator.geolocation.getCurrentPosition(showPosition)
 	}
 	else {
-		alert("NO navigator.geolocation detected")
 	}
 	/*
 	else {
