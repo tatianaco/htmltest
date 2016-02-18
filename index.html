@@ -22,44 +22,43 @@
 	
 
 	
-	var cities = [ [0 , 0 , 0 , 0], ['Yokneam - MTL' , 0 , "flag_israel.png" , 0] , ['Beer Sheva - MTBG' , 0 , "flag_israel.png" , 0],  ['Boston - MTB' , 0 , 0 , 0 ] , ['Texas - MTI' , 0 , 0, 0   ] ,  ['California - MTSP' , 0 , 0 , 0  ] , ['Taiwan - MTW' , 0 , 0 , 0 ] , ['China - MTBC' , 0 , 0 , 0 ]];
+	var cities = [ [0 , 0 , 0 , 0], ['Yokneam - MTL' , 0 , "flag_israel.png" , 0] , ['Beer Sheva - MTBG' , 0 , "flag_israel.png" , 0],  ['Boston - MTB' , 0 , 0 , 0 ] , ['Texas - MTI' , 0 , 0, 0   ] ,  ['California - MTSP' , 0 , 0 , 0  ] , ['Taiwan - MTW' , 0 , 0 , 0 ] , ['China - MTBC' , 0 , 0 , 0 ] , ['UK - MTUK' , 0 , 0 , 0 ]];
 	
 	var currParentPtr = 0;
 	
-	geo_sites[ 0 ] = [ 'Beit Mellanox', 32.666081 , 35.106154 , 1 , "flag_israel.png"]; //verified
-	geo_sites[ 1 ] = [ 'Ez Chip',32.661275, 35.105712, 1 , "flag_israel.png"];  //verified
-	geo_sites[ 2 ] = [ 'Hermon Bldg.', 32.637178, 35.090629, 1 , "flag_israel.png"]; //according to hermon str
-	geo_sites[ 3 ] = [ 'Tavor Bldg.', 32.644889, 35.095888 , 1 , "flag_israel.png"]; //according to tavor str
-	geo_sites[ 4 ] = [ 'Levinstein Bldg.', 32.671281 , 35.107057 , 1 , "flag_israel.pngs"]; //verified 
-	geo_sites[ 5 ] = [ 'Tel-Aviv - MTV', 32.107235, 34.836098  , null , "flag_israel.png"]; //verified
-	geo_sites[ 6 ] = [ 'Raanana - MTR', 32.198310, 34.882461  , null , "flag_israel.png"]; //verified
-	geo_sites[ 7 ] = [ 'Ramat-Gan - MTG', 32.090590, 34.870558  , null , "flag_israel.png" ]; //verified
-	geo_sites[ 8 ] = [ 'Beer Sheva BLDG 1',31.263484, 34.811114  , 2  , "flag_israel.png"]; //verified
-	geo_sites[ 9 ] = [ 'Beer Sheva BLDG 2',null , null  , 2 , "flag_israel.png"]; //no street found
-	geo_sites[ 10 ] = [ 'Ez Chip Kiryat Gat' ,null , null , null  , "flag_israel.png"]; //no street found
-	geo_sites[ 11 ] = [ 'Tel-Hai - MTH', 33.236037, 35.583220 , null , "flag_israel.png"];
-	geo_sites[ 12 ] = [ 'Sunnyvale - MTI', 37.3788315, -121.98881 , null , "usa-flag.png"  ];
-	geo_sites[ 13 ] = [ 'Austin',  30.3978941,-97.7297516  ,4 , null , "usa-flag.png" ];
-	geo_sites[ 14 ] = [ 'Houston', null ,null , 4 ,  "usa-flag.png" ];
-	geo_sites[ 15 ] = [ 'Redmond - MTS', 47.6808206 ,-122.1324999 ,  null , "usa-flag.png" ];
-	geo_sites[ 16 ] = [ 'LA', null , null , 5 ,  "usa-flag.png" ];
-	geo_sites[ 17 ] = [ 'Monterey Park Site', 34.0462349,-118.1628729 , 5 , null , "usa-flag.png" ];
-	geo_sites[ 18 ] = [ 'New York - MTNY' , 40.7095563,-74.0087531 , null, "usa-flag.png"];
-	geo_sites[ 19 ] = [ 'North Carolina - MTNC' , 35.8804253,-78.8399453 , null, "usa-flag.png"];
-	geo_sites[ 20 ] = [ 'Massachusetts', null , null ,3 , "usa-flag.png" ];
-	geo_sites[ 21 ] = [ 'Ez chip Boston', null , null ,3 , "usa-flag.png" ];
-	
-	//geo_sites[ 22 ] = [ 'Taiwan Site',25.0742254,121.5763775];
-	geo_sites[ 22 ] = [ 'Taipei', 5.0742254 ,121.5763775  , 6 , "Taiwan-flag.png"];
+	geo_sites[ 0 ] = [ 'Shlomo Beit Mellanox', 32.665171, 35.105437 , 1 , "flag_israel.png"]; //10
+	geo_sites[ 1 ] = [ 'Kochav',32.661275, 35.105712, 1 , "flag_israel.png"];  //verified
+	geo_sites[ 2 ] = [ 'Hermon Bldg.', 32.665334, 35.105403, 1 , "flag_israel.png"]; //11
+	geo_sites[ 3 ] = [ 'Tavor Bldg.', 32.671238, 35.106948 , 1 , "flag_israel.png"]; //12
+	geo_sites[ 4 ] = [ 'Levinstein Bldg.', 32.667562, 35.106987 , 1 , "flag_israel.pngs"]; //13
+	geo_sites[ 5 ] = [ 'Tel-Aviv - MTV', 32.108043, 34.837991  , null , "flag_israel.png"]; //14
+	geo_sites[ 6 ] = [ 'Raanana - MTR', 32.198255, 34.882445  , null , "flag_israel.png"]; //15
+	geo_sites[ 7 ] = [ 'Ramat-Gan - MTG', 32.090438, 34.870550  , null , "flag_israel.png" ]; //16
+	geo_sites[ 8 ] = [ 'Beer Sheva- MTBG Bldg.1',31.263283, 34.811114  , 2  , "flag_israel.png"]; //18
+	geo_sites[ 9 ] = [ 'Beer Sheva - MTBG Bldg.2',31.264419, 34.812361  , 2 , "flag_israel.png"]; //19
+	geo_sites[ 10 ] = [ 'Kiryat Gat - MTKG' , 31.605481, 34.783506 , null  , "flag_israel.png"]; //verified
+	geo_sites[ 11 ] = [ 'Tel-Hai - MTH', 33.235859, 35.583161 , null , "flag_israel.png"]; //17
+	geo_sites[ 12 ] = [ 'Sunnyvale - MTI', 37.379185, -121.987295 , null , "usa-flag.png"  ];//1
+	geo_sites[ 13 ] = [ 'Austin - MTX', 30.398142, -97.730457  ,4 , null , "usa-flag.png" ]; //2
+	geo_sites[ 14 ] = [ 'Houston - MTI',  29.988243, -95.573146 , 4 ,  "usa-flag.png" ]; //3
+	geo_sites[ 15 ] = [ 'Virginia - MFS',  38.953800, -77.383684 , null ,  "usa-flag.png" ]; //4
+	geo_sites[ 16 ] = [ 'Redmond - MTS', 47.678152, -122.135357 ,  null , "usa-flag.png" ]; //5
+	geo_sites[ 17 ] = [ 'LA - MTSP(Kotura)', 34.046408, -118.165051 , 5 ,  "usa-flag.png" ]; //7
+	geo_sites[ 18 ] = [ 'New York - MTNY' , 40.709687, -74.010917 , null, "usa-flag.png"];//8
+	geo_sites[ 19 ] = [ 'North Carolina - MTNC' , 35.8804253,-78.8399453 , null, "usa-flag.png"]; //9
+	geo_sites[ 20 ] = [ 'Boston - MTB', 42.598455, -71.329607 ,3 , "usa-flag.png" ]; //6
+	geo_sites[ 21 ] = [ 'Ez chip Boston', 42.281124, -71.572612  ,3 , "usa-flag.png" ]; //verified
+	geo_sites[ 22 ] = [ 'Taiwan - MTW', 5.0742254 ,121.5763775  , 6 , "Taiwan-flag.png"];//20
 	geo_sites[ 23 ] = [ 'ASE', null , null  , 6  , "Taiwan-flag.png"];
-	geo_sites[ 24 ] = [ 'Beijing Viva Plaza Bldg.',39.9740321,116.3046697  , 7 , "china_flag.png"];
-	geo_sites[ 25 ] = [ 'Beijing Poly Bldg.',null , null  , 7 , "china_flag.png"];
-	geo_sites[ 26 ] = [ 'Shenzhen' , null , null   , 7  , "china_flag.png"];
-	geo_sites[ 27 ] = [ 'Tokyo - MTTK',35.6904433,139.6978957 , null , "flag_japan.png"];
+	geo_sites[ 24 ] = [ 'China - MTBC',39.9740321,116.3046697  , 7 , "china_flag.png"];//21
+	geo_sites[ 25 ] = [ 'China - MTBC Poly Bldg.',null , null  , 7 , "china_flag.png"];//22
+	geo_sites[ 26 ] = [ 'China - Regus' , 22.545309, 114.055229   , 7  , "china_flag.png"];//23
+	geo_sites[ 27 ] = [ 'Tokyo - MTTK',335.690517, 139.695728 , null , "flag_japan.png"];//24
 	geo_sites[ 28 ] = [ 'Korea', null , null , null , "korea_flag.png"];
-	geo_sites[ 29 ] = [ 'Denmark - MTDK',55.623264,12.0578227 ,null ,  "denmark_flag.png"  ];
-	geo_sites[ 30 ] = [ 'UK - MTUK', null , null  ,null ,  "uk-flag.jpeg"  ];
-	geo_sites[ 31] = [ 'Netherlands - MTNL', null ,null ,null ,  "netherlands_flag.png"  ];
+	geo_sites[ 29 ] = [ 'Denmark - MTDK',55.623322, 12.055634 ,null ,  "denmark_flag.png"  ];//26
+	geo_sites[ 30 ] = [ 'UK - WeWork', 51.517988, -0.090902  ,8 ,  "uk-flag.jpeg"  ];//25
+	geo_sites[ 31 ] = [ 'EZ Chip UK', 51.519561, -0.721113  ,8 ,  "uk-flag.jpeg"  ];//25
+	geo_sites[ 32] = [ 'Netherlands - MTNL', 51.997597, 4.384684 ,null ,  "netherlands_flag.png"  ];//27
 	
 	
 	nv_apps[ 0 ] = [ 'Waze<BR>App', '#B1E4E3', '#81B4C3', '#ffffff' ];
