@@ -167,7 +167,7 @@ function onNavigateApp(event , mode ) {
 			window.open("http://maps.apple.com/?q=Mellanox&ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&z=17&navigate=yes" , '_blank');
 		}
 		else {
-			window.location = "waze://?ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&navigate=yes";
+			window.location = "waze://?q=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&navigate=yes";
 		}
 		
 	}
@@ -984,7 +984,51 @@ function createAppChooseView () {
 	newElement.style.textAlign = "center"; 
 }
 
+function createNavButton (cookie) {
 
+	var nDiv = document.createElement('div');
+	nDiv.style.paddingTop = "30px";
+	nDiv.id = "nDiv";
+	nDiv.style.backgroundColor = "#ff00ff";
+	nDiv.style.width = "100%";
+	nDiv.style.height = "100px";
+	nDiv.style.textAlign = "center";
+	nDiv.addEventListener("click", onNavButtonClick, false);
+	
+	document.getElementById("nav_area").appendChild(nDiv);
+	
+
+	
+	
+	var nImage = document.createElement('img');
+	if (cookie == 1) {
+		nImage.src = "images/google-maps.png";
+	}
+	else if (cookie == 2) {
+		nImage.src = "images/apple-maps.png";
+	}
+	else if (cookie == 3) {
+		nImage.src = "images/waze.png";
+	}
+	else {
+		nImage.src = "images/google-maps.png";
+	}
+	nImage.style.width = "40px";
+	nImage.style.height = "40px";
+	
+	nDiv.appendChild(nImage);
+	
+	
+	var newlabel = document.createElement("Label");
+	newlabel.setAttribute("for",nImage);
+	newlabel.style.marginLeft = "20px";
+	newlabel.innerHTML = "click to change";
+	newlabel.style.color = "#0000FF";
+	nDiv.appendChild(newlabel);
+	
+	
+	
+}
 	
 function nv_apps_draw(){
 
@@ -1001,6 +1045,7 @@ function nv_apps_draw(){
 		}
 		else {
 			
+			/*
 			var nbutton = document.createElement("div");
 			nbutton.style.height = '24px';
 			nbutton.style.textAlign = 'center';
@@ -1025,6 +1070,10 @@ function nv_apps_draw(){
 			nbutton.style["-khtml-border-radius"] ="3px";
 			nbutton.style["border-radius"] = "3px";
 			nbutton.addEventListener("click", onNavButtonClick, false);
+			*/
+			
+			createNavButton(cookie);
+			
 		}
 		
 		
@@ -1036,6 +1085,7 @@ function nv_apps_draw(){
 	else {
 		console.log("WEB SITE DETECTED");
 		showPositionYokneam();
+		createNavButton();
 	}
 	
 	
@@ -1112,9 +1162,9 @@ function onLoad() {
 	  </div>
 	  <div class="panel-body" id="panel-body" style='display:block;'>
 	  	
-		  <p class="text-muted text-center" id="div_nav_buttons_label" style="display: none;">
-			  Choose your preferred navigation App
-		  </p>
+		  <div id="nav_area">
+		  
+		  </div>
 		
 		  <div data-toggle="buttons" align="center" style="width:100%;" id="geo_apps" style="margin-bottom:15;">
 		  </div>
