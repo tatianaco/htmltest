@@ -143,7 +143,7 @@ function onNavigateApp(event , mode ) {
 			console.log("case dkm > 1000");
 			mode = 1;
 		}
-		window.open("http://maps.google.com/?ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&z=17&navigate=yes" , '_blank') ;
+		window.open("http://maps.google.com/?q=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&z=17&navigate=yes" , '_blank') ;
 		
 		if ( mode == 3 ) {
 			
@@ -160,7 +160,7 @@ function onNavigateApp(event , mode ) {
 		}
 		else if ( mode == 1 )  {
 			console.log("case nv_selected == 1");
-			window.open("http://maps.google.com/?ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&z=17&navigate=yes" , '_blank') ;
+			window.open("http://maps.google.com/?q=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&z=17&navigate=yes" , '_blank') ;
 		}
 		else if ( mode == 2 ) {
 			console.log("case nv_selected == 2");
