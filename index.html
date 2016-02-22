@@ -22,7 +22,7 @@
 	
 
 	
-	var cities = [ [0 , 0 , 0 , 0], ['Yokneam - MTL' , 0 , "flag_israel.png" , 0] , ['Beer Sheva - MTBG' , 0 , "flag_israel.png" , 0],  ['Boston - MTB' , 0 , 0 , 0 ] , ['Texas - MTI' , 0 , 0, 0   ] ,  ['California - MTSP' , 0 , 0 , 0  ] , ['Taiwan - MTW' , 0 , 0 , 0 ] , ['China - MTBC' , 0 , 0 , 0 ] , ['UK - MTUK' , 0 , 0 , 0 ]];
+	var cities = [ [0 , 0 , 0 , 0], ['Yokneam - MTL' , 0 , "flag_israel.png" , 0] , ['Beer Sheva - MTBG' , 0 , "flag_israel.png" , 0],  ['Boston - MTB' , 0 , 0 , 0 ] , ['Texas - MTI' , 0 , 0, 0   ] ,  ['LA - MTSP' , 0 , 0 , 0  ] , ['Taiwan - MTW' , 0 , 0 , 0 ] , ['China - MTBC' , 0 , 0 , 0 ] , ['UK - MTUK' , 0 , 0 , 0 ]];
 	
 	var currParentPtr = 0;
 	
@@ -43,21 +43,22 @@
 	geo_sites[ 14 ] = [ 'Houston - MTX',  29.988243, -95.573146 , null ,  "usa-flag.png" ]; //3
 	geo_sites[ 15 ] = [ 'Virginia - MFS',  38.953800, -77.383684 , null ,  "usa-flag.png" ]; //4
 	geo_sites[ 16 ] = [ 'Redmond - MTS', 47.678152, -122.135357 ,  null , "usa-flag.png" ]; //5
-	geo_sites[ 17 ] = [ 'LA - MTSP(Kotura)', 34.046408, -118.165051 , 5 ,  "usa-flag.png" ]; //7
-	geo_sites[ 18 ] = [ 'New York - MTNY' , 40.709687, -74.010917 , null, "usa-flag.png"];//8
-	geo_sites[ 19 ] = [ 'North Carolina - MTNC' , 35.8804253,-78.8399453 , null, "usa-flag.png"]; //9
-	geo_sites[ 20 ] = [ 'MTB', 42.598455, -71.329607 ,3 , "usa-flag.png" ]; //6
-	geo_sites[ 21 ] = [ 'MTBU', 42.281124, -71.572612  ,3 , "usa-flag.png" ]; //verified
+	geo_sites[ 17 ] = [ 'MTSP', 34.046408, -118.165051 , 5 ,  "usa-flag.png" ]; //7
+	geo_sites[ 18 ] = [ 'MTSP2', 34.048777, -118.165756 , 5 ,  "usa-flag.png" ]; //7
+	geo_sites[ 19 ] = [ 'New York - MTNY' , 40.709687, -74.010917 , null, "usa-flag.png"];//8
+	geo_sites[ 20 ] = [ 'North Carolina - MTNC' , 35.8804253,-78.8399453 , null, "usa-flag.png"]; //9
+	geo_sites[ 21 ] = [ 'MTB', 42.598455, -71.329607 ,3 , "usa-flag.png" ]; //6
+	geo_sites[ 22 ] = [ 'MTBU', 42.281124, -71.572612  ,3 , "usa-flag.png" ]; //verified
 	//geo_sites[ 22 ] = [ 'Taiwan', 5.0742254 ,121.5763775  , null , "Taiwan-flag.png"];//20
 	//geo_sites[ 24 ] = [ 'China - MTBC',39.9740321,116.3046697  , 7 , "china_flag.png"];//21
 	//geo_sites[ 25 ] = [ 'China - MTBC Poly Bldg.',null , null  , 7 , "china_flag.png"];//22
-	geo_sites[ 21 ] = [ 'Shenzhen - MTBC' , 22.545309, 114.055229   ,null  , "china_flag.png"];//23
-	geo_sites[ 22 ] = [ 'Tokyo - MTTK',335.690517, 139.695728 , null , "flag_japan.png"];//24
+	geo_sites[ 23 ] = [ 'Shenzhen - MTBC' , 22.545309, 114.055229   ,null  , "china_flag.png"];//23
+	geo_sites[ 24 ] = [ 'Tokyo - MTTK',335.690517, 139.695728 , null , "flag_japan.png"];//24
 	//geo_sites[ 28 ] = [ 'Korea', null , null , null , "korea_flag.png"];
-	geo_sites[ 23 ] = [ 'Denmark - MTDK',55.623322, 12.055634 ,null ,  "denmark_flag.png"  ];//26
-	geo_sites[ 24 ] = [ 'London', 51.517988, -0.090902  ,8 ,  "uk-flag.jpeg"  ];//25
-	geo_sites[ 25] = [ 'Maidenhead', 51.519561, -0.721113  ,8 ,  "uk-flag.jpeg"  ];//25
-	geo_sites[ 26] = [ 'Netherlands - MTNL', 51.997597, 4.384684 ,null ,  "netherlands_flag.png"  ];//27
+	geo_sites[ 25 ] = [ 'Denmark - MTDK',55.623322, 12.055634 ,null ,  "denmark_flag.png"  ];//26
+	geo_sites[ 26 ] = [ 'London', 51.517988, -0.090902  ,8 ,  "uk-flag.jpeg"  ];//25
+	geo_sites[ 27] = [ 'Maidenhead', 51.519561, -0.721113  ,8 ,  "uk-flag.jpeg"  ];//25
+	geo_sites[ 28] = [ 'Netherlands - MTNL', 51.997597, 4.384684 ,null ,  "netherlands_flag.png"  ];//27
 	
 	
 	nv_apps[ 0 ] = [ 'Waze<BR>App', '#B1E4E3', '#81B4C3', '#ffffff' ];
@@ -143,7 +144,7 @@ function onNavigateApp(event , mode ) {
 			mode = 1;
 		}
 		window.open("http://maps.google.com/?ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&z=17&navigate=yes" , '_blank') ;
-		/*
+		
 		if ( mode == 3 ) {
 			
 			//setTimeout (function () {
@@ -165,7 +166,10 @@ function onNavigateApp(event , mode ) {
 			console.log("case nv_selected == 2");
 			window.open("http://maps.apple.com/?q=Mellanox&ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&z=17&navigate=yes" , '_blank');
 		}
-		*/
+		else {
+			window.location = "waze://?ll=" + geo_sites[i][1] +  "," + geo_sites[i][2] +  "&navigate=yes";
+		}
+		
 	}
 }
 
@@ -1026,7 +1030,7 @@ function nv_apps_draw(){
 		
 	} else if (navigator.userAgent.indexOf("Android") > 0  ) {
 		console.log("ANDROID DETECTED");
-		showPositionYokneam();
+		//showPositionYokneam();
 		
 	}
 	else {
